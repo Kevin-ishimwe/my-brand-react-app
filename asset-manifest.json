@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/my-brand-react-app/static/css/main.4ca8f66d.css",
-    "main.js": "/my-brand-react-app/static/js/main.e932dc41.js",
+    "main.css": "/my-brand-react-app/static/css/main.457184b4.css",
+    "main.js": "/my-brand-react-app/static/js/main.cabb45a8.js",
     "static/js/787.a91260d6.chunk.js": "/my-brand-react-app/static/js/787.a91260d6.chunk.js",
-    "static/media/herobg.png": "/my-brand-react-app/static/media/herobg.548116f7fe78f56a31b8.png",
+    "static/media/herobg.png": "/my-brand-react-app/static/media/herobg.801494a21881c2eabcf4.png",
     "index.html": "/my-brand-react-app/index.html",
-    "main.4ca8f66d.css.map": "/my-brand-react-app/static/css/main.4ca8f66d.css.map",
-    "main.e932dc41.js.map": "/my-brand-react-app/static/js/main.e932dc41.js.map",
+    "main.457184b4.css.map": "/my-brand-react-app/static/css/main.457184b4.css.map",
+    "main.cabb45a8.js.map": "/my-brand-react-app/static/js/main.cabb45a8.js.map",
     "787.a91260d6.chunk.js.map": "/my-brand-react-app/static/js/787.a91260d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ca8f66d.css",
-    "static/js/main.e932dc41.js"
+    "static/css/main.457184b4.css",
+    "static/js/main.cabb45a8.js"
   ]
 }
