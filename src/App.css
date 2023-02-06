@@ -1,42 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Romanesco&display=swap");
 
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+  font-family: "Romanesco", sans-serif;
+  font-weight: 500;
+  color: azure;
+  margin: -0.2% 0%;
+  padding: 9px 18px;
+  border-radius: 50%;
+  border: solid azure;
+
+  animation: binksake 2s infinite;
+  transition: 0.3s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes binksake {
+  0% {
+    background-color: none;
+  }
+  50% {
+    background-color: #000d53;
+  }
+  100% {
+    background-color: #ecbe3a;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.learn {
+  border: solid black;
+  padding: 0.3em 2%;
+  margin-left: 1%;
+  color: black;
+  box-sizing: border-box;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.learn:hover {
+  border-color: white;
+  margin-left: 3%;
 }
