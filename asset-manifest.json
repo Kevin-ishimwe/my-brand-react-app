@@ -1,16 +1,22 @@
 {
   "files": {
-    "main.css": "/my-brand-react-app/static/css/main.a2525a44.css",
-    "main.js": "/my-brand-react-app/static/js/main.18e065f6.js",
+    "main.css": "/my-brand-react-app/static/css/main.54703e02.css",
+    "main.js": "/my-brand-react-app/static/js/main.335754ea.js",
     "static/js/787.a91260d6.chunk.js": "/my-brand-react-app/static/js/787.a91260d6.chunk.js",
     "static/media/herobg.png": "/my-brand-react-app/static/media/herobg.801494a21881c2eabcf4.png",
+    "static/media/mui.png": "/my-brand-react-app/static/media/mui.9561ca31868d2d40f904.png",
+    "static/media/react.png": "/my-brand-react-app/static/media/react.02a3258aa25aa0add98d.png",
+    "static/media/node.png": "/my-brand-react-app/static/media/node.f55e825cee3dbdc695f3.png",
+    "static/media/sass.png": "/my-brand-react-app/static/media/sass.e4e327bb2c6d08f2e9bd.png",
+    "static/media/mongo.png": "/my-brand-react-app/static/media/mongo.19b631e2b7ca61cf8d6a.png",
+    "static/media/html5.png": "/my-brand-react-app/static/media/html5.d41412dbbf34af036698.png",
     "index.html": "/my-brand-react-app/index.html",
-    "main.a2525a44.css.map": "/my-brand-react-app/static/css/main.a2525a44.css.map",
-    "main.18e065f6.js.map": "/my-brand-react-app/static/js/main.18e065f6.js.map",
+    "main.54703e02.css.map": "/my-brand-react-app/static/css/main.54703e02.css.map",
+    "main.335754ea.js.map": "/my-brand-react-app/static/js/main.335754ea.js.map",
     "787.a91260d6.chunk.js.map": "/my-brand-react-app/static/js/787.a91260d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2525a44.css",
-    "static/js/main.18e065f6.js"
+    "static/css/main.54703e02.css",
+    "static/js/main.335754ea.js"
   ]
 }
