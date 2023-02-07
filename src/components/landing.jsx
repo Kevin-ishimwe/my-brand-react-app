@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { HiOutlineArrowNarrowDown } from "react-icons/hi";
+import SliderComponent from "./slider";
 import herobg from "../assets/herobg.png";
 import Navbar from "./navbar";
 import AOS from "aos";
@@ -15,6 +16,11 @@ import node from "../assets/node.png";
 import mongo from "../assets/mongo.png";
 import fire from "../assets/fire.png";
 import jwt from "../assets/jwt.png";
+import figma from "../assets/figma.png";
+import swagger from "../assets/swagger.png";
+import jest from "../assets/jest.png";
+import git from "../assets/git.png";
+
 
 function Landing() {
   AOS.init({
@@ -36,21 +42,31 @@ function Landing() {
     { img: jwt, name: "JWT" },
     { img: fire, name: "firebase" },
   ];
+  const other_skills = [
+    { img: git, name: "git/github" },
+    { img: jest, name: "jest" },
+    { img: swagger, name: "docs" },
+    { img: figma, name: "figma" },
+  ];
   const about = useRef();
   const hero = useRef();
   useEffect(() => {
     window.onscroll = () => {
-      if (window.visualViewport.width > 1000) {
-        if (Math.floor(window.scrollY) > 790) {
+      if (window.visualViewport.width > 1024) {
+        if (Math.floor(window.scrollY) > 1700) {
+          hero.current.style.position = "absolute";
+          about.current.style.position = "absolute";
+          about.current.style.top = "132vh";
+        } else if (Math.floor(window.scrollY) > 790) {
           // console.log(window.scrollY);
 
           hero.current.style.position = "absolute";
           hero.current.style.top = "116vh";
           hero.current.style.right = "0%";
           about.current.style.position = "fixed";
-          about.current.style.top = "-2vh";
+          about.current.style.top = "3vh";
 
-          console.log(about.current);
+          console.log(Math.floor(window.scrollY));
         } else {
           hero.current.style.position = "fixed";
           hero.current.style.top = "0vh";
@@ -89,10 +105,10 @@ function Landing() {
                 FULLSTACK WEB DEVELOPER
               </p>
               <p
-                data-aos="slide-up"
+                data-aos="fade"
                 data-aos-duration="1000"
                 data-aos-delay="100"
-                className="dark:text-[#aaaa8d] sm:dark:ml-6 w-full text-center md:text-left md:dark:w-8/12 sm:ml-4 md:ml-8 sm:w-fit md:w-2/3 dar:lg:w-8/12 lg:w-9/12 lg:ml-20 mt-4 text-xl text-gray-800"
+                className="dark:text-[#aaaa8d] sm:dark:ml-6 w-full text-center md:text-left md:dark:w-8/12 sm:ml-4 md:ml-8 sm:w-fit md:w-2/3 dark:lg:w-8/12 lg:w-9/12 lg:ml-20 mt-4 text-xl text-gray-800"
               >
                 I strive to create visually appealing and functional websites
                 that deliver a great user experience. I am always looking for
@@ -130,7 +146,7 @@ function Landing() {
           <p className="lg:dark:ml-8 sm:ml-6  dark:text-yellow-300 text-4xl text-[#000223] font-semibold text-center sm:text-left  mb-2  lg:ml-20 pt-10">
             ABOUT ME
           </p>
-          <div data-aos="fade-up" data-aos-duration="1300" className="">
+          <div data-aos="fade-up" data-aos-duration="1000" className="">
             <p className="lg:dark:ml-8 w-11/12 mx-auto  dark:text-[#aaaa8d] dark:lg:w-5/12 lg:w-5/12 lg:ml-20 text-lg text-gray-800">
               With 2 years of experience, I have honed my ability to stay
               focused and productive, even under heavy amounts of stress. My
@@ -158,7 +174,7 @@ function Landing() {
           </div>
         </div>
         <div className="dark:bg-[#040b1e] relative lg:w-6/12 lg:mt-96 lg:pt-72  lg:float-right  ">
-          <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-yellow-300 text-5xl text-[#000223] font-semibold  mb-6  lg:ml-28 ">
+          <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-yellow-300 text-5xl text-[#000223] font-semibold  mb-6  lg:ml-28 lg:mt-9 ">
             SKILLS
           </p>
           <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2 mt-6  lg:ml-28 ">
@@ -197,8 +213,31 @@ function Landing() {
               );
             })}
           </div>
+          <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2 mt-6  lg:ml-28 ">
+            Others
+          </p>
+          <div className="  flex flex-wrap  justify-center  h-26">
+            {other_skills.map(({ img, name }) => {
+              return (
+                <div
+                  key={name}
+                  className=" bg-[#6b87d21c] pt-2 m-2 grid justify-center w-32 h-32 rounded-xl"
+                >
+                  <img className="h-20" src={img} alt="javascript" />
+                  <p className="text-center text-1xl dark:text-[#dab92d]">
+                    {name}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div className="w-full h-full relative bg-red-300 "></div>
+        <div className="w-full h-full absolute top-full  bg-[#fcfcfc] ">
+          <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2 mt-12   ">
+            PROJECTS
+          </p>
+              <SliderComponent/>
+        </div>
       </div>
     </div>
   );
