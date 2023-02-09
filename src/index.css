@@ -1,17 +1,72 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  scrollbar-color: rgb(12, 0, 19) rgb(206, 209, 0);
+}
+* {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.center .slick-center #div_see {
+  margin: 0% 0%;
+  height: 400px;
+  transform: scale(1.65, 1);
+  z-index: 20;
+  transition: 0.3s ease;
+  pointer-events: all;
+}
+.center #div_see {
+  margin: 9% 0%;
+  pointer-events: none;
+}
+.center .slick-center #div_see img {
+  width: 100%;
+  height: 100%;
+}
+.slick-slider {
+  width: 100%;
+  margin-top: 5%;
+  padding: 0% 0em;
+}
+.slick-dots {
+  position: relative;
+  right: 0vw;
+  bottom: 0vh;
+}
+#div_see:hover #div_see_text {
+  transition: 0.5s ease-in-out;
+  top: 0%;
+  padding: 50% 5%;
+  background: linear-gradient(0deg, rgb(0, 0, 0, 0.7), rgba(56, 56, 56, 0.289));
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  #hamburger {
+    padding: 1% 1%;
+    position: fixed;
+    transition: 0.2s ease-in;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+  #menu_item {
+    margin: 1% 2%;
+    padding: 3% 0%;
+  }
 }
