@@ -15,7 +15,7 @@
   padding: 9px 18px;
   border-radius: 50%;
   border: solid azure;
-
+  max-height: fit-content;
   animation: binksake 2s infinite;
   transition: 0.3s ease-in-out;
 }

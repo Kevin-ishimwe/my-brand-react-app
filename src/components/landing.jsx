@@ -21,7 +21,6 @@ import swagger from "../assets/swagger.png";
 import jest from "../assets/jest.png";
 import git from "../assets/git.png";
 
-
 function Landing() {
   AOS.init({
     offset: 200,
@@ -53,10 +52,10 @@ function Landing() {
   useEffect(() => {
     window.onscroll = () => {
       if (window.visualViewport.width > 1024) {
-        if (Math.floor(window.scrollY) > 1700) {
+        if (Math.floor(window.scrollY) > 1900) {
           hero.current.style.position = "absolute";
           about.current.style.position = "absolute";
-          about.current.style.top = "132vh";
+          about.current.style.top = "180vh";
         } else if (Math.floor(window.scrollY) > 790) {
           // console.log(window.scrollY);
 
@@ -129,7 +128,7 @@ function Landing() {
             </div>
 
             <img
-              className="dark:rounded-full lg:dark:rounded-none md:dark:bg-inherit md:dark:rounded-none lg:dark:bg-yellow-400 lg:dark:w-6/12 dark:bg-yellow-400  relative  rounded-full  mt-20 sm:mt-0 bg-white h-2/3 w-8/12 mx-auto sm:rounded-none sm:bg-inherit sm:h-2/3 md:w-6/12 md:absolute md:top-0 md:-right-0  lg:fixed top-0 lg:-right-7 md:h-full z-10"
+              className="dark:rounded-full lg:dark:rounded-none md:dark:bg-inherit md:dark:rounded-none lg:dark:bg-yellow-400 lg:dark:w-6/12 dark:bg-yellow-400  relative  rounded-full  mt-20 sm:mt-32 md:mt-0 bg-white h-2/3 w-8/12 mx-auto sm:rounded-none sm:bg-inherit sm:h-2/3 md:w-6/12 md:absolute md:top-0 md:-right-0  lg:fixed top-0 lg:-right-7 md:h-full z-10"
               alt="my_AI_generated_image"
               src={herobg}
               ref={hero}
@@ -140,26 +139,26 @@ function Landing() {
 
       <div
         id="insidernav"
-        className="dark:bg-[#040b1e] relative lg:absolute top-full  pt-32 w-full min-h-full  z-5"
+        className="dark:bg-[#040b1e] relative lg:absolute top-full  md:pt-32 w-full min-h-full  z-5"
       >
-        <div ref={about}>
-          <p className="lg:dark:ml-8 sm:ml-6  dark:text-yellow-300 text-4xl text-[#000223] font-semibold text-center sm:text-left  mb-2  lg:ml-20 pt-10">
+        <div data-aos="fade-up" data-aos-duration="1000" ref={about}>
+          <p className="lg:dark:ml-8 sm:ml-6  dark:text-yellow-300 text-4xl text-[#000223] font-semibold text-center md:text-left  mb-2  lg:ml-20 pt-10">
             ABOUT ME
           </p>
-          <div data-aos="fade-up" data-aos-duration="1000" className="">
-            <p className="lg:dark:ml-8 w-11/12 mx-auto  dark:text-[#aaaa8d] dark:lg:w-5/12 lg:w-5/12 lg:ml-20 text-lg text-gray-800">
+          <div className=" flex flex-col justify-center ">
+            <p className="lg:dark:ml-8 w-11/12 text-center mx-auto  dark:text-[#aaaa8d] dark:lg:w-5/12 md:text-left lg:w-5/12 lg:ml-20 text-lg text-gray-800">
               With 2 years of experience, I have honed my ability to stay
               focused and productive, even under heavy amounts of stress. My
               friends often come to me for help with their coding projects,
               which is a testament to my skills and dedication to the craft. One
               of my greatest strengths as a web developer is my problem-solving
               skills.
-              <br></br> <br></br> I find great satisfaction in breaking down
-              complex issues and building elegant and functional websites. I am
-              always looking for new ways to expand my knowledge and stay
-              current with the latest trends and technologies in web
-              development. My long-term goal is to become a senior web developer
-              and eventually start my own development firm.
+              <br></br> I find great satisfaction in breaking down complex
+              issues and building elegant and functional websites. I am always
+              looking for new ways to expand my knowledge and stay current with
+              the latest trends and technologies in web development. My
+              long-term goal is to become a senior web developer and eventually
+              start my own development firm.
               <br></br>
               <br></br>I am constantly pushing my limits and seeking new
               challenges, both professionally and personally. I believe that
@@ -167,13 +166,13 @@ function Landing() {
             </p>
             <button
               data-aos="fade-up"
-              className="lg:dark:ml-8  rounded-full  dark:bg-yellow-400  dark:text-black ease-out font-semibold duration-300 bg-[#00034a] text-1xl mt-5  p-2 mx-a text-white sm:ml-4 lg:ml-28 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
+              className="lg:dark:ml-8  rounded-full  dark:bg-yellow-400  mx-auto dark:text-black ease-out font-semibold duration-300 bg-[#00034a] text-1xl mt-5 max-w-fit  p-2 mx-a text-white sm:ml-4 lg:ml-28 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
             >
               DOWNLOAD CV
             </button>
           </div>
         </div>
-        <div className="dark:bg-[#040b1e] relative lg:w-6/12 lg:mt-96 lg:pt-72  lg:float-right  ">
+        <div className="dark:bg-[#040b1e] relative lg:w-6/12 lg:mt-96 lg:pt-72 lg:pb-32  lg:float-right  ">
           <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-yellow-300 text-5xl text-[#000223] font-semibold  mb-6  lg:ml-28 lg:mt-9 ">
             SKILLS
           </p>
@@ -232,11 +231,11 @@ function Landing() {
             })}
           </div>
         </div>
-        <div className="w-full h-full absolute top-full  bg-[#fcfcfc] ">
+        <div className="dark:bg-[#040b1e] w-full h-full absolute top-full lg:pt-20  bg-[#fcfcfc] ">
           <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2 mt-12   ">
             PROJECTS
           </p>
-              <SliderComponent/>
+          <SliderComponent />
         </div>
       </div>
     </div>
