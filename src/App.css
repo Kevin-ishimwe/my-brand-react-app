@@ -6,6 +6,9 @@
 .App {
   text-align: center;
 }
+#root {
+  overflow-x: hidden;
+}
 
 .logo {
   font-family: "Romanesco", sans-serif;

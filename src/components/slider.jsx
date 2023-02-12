@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import AIapp from "../assets/projects/AIapp.JPG";
 import AGCera from "../assets/projects/AGCera.JPG";
 import musicapp from "../assets/projects/musicapp.JPG";
+import contact from "../assets/contact.png";
 
 function SliderComponent() {
   const settings = {
@@ -79,6 +80,7 @@ function SliderComponent() {
           {slides.map(({ img, name, demo }) => {
             return (
               <div
+              key={img}
                 id="div_see"
                 className="   m-1 rounded-md cursor-pointer overflow-hidden relative"
               >
@@ -102,41 +104,41 @@ function SliderComponent() {
           })}
         </Slider>
       </div>
-      <div>
-        <form className="flex flex-col dark:bg-slate-700   w-fit p-3 mx-auto">
-          <blockquote class="text-2xl font-semibold italic text-center text-slate-900">
+      <div className="flex w-11/12 h-[68vh] mx-auto shadow-2xl rounded-2xl dark:bg-slate-900 lg:min-w-[870px] mt-20 lg:w-8/12 md:mt-0">
+        <form className="flex flex-col w-full   md:w-7/12 p-7 lg:w-9/12">
+          <blockquote className="text-2xl font-semibold italic text-center text-slate-900 dark:text-gray-200">
             im always
-            <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block mx-2">
-              <span class="relative text-white">a call</span>
+            <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-yellow-500 relative inline-block mx-2">
+              <span className="relative text-white">a text</span>
             </span>
             away
           </blockquote>
-          <div className="flex flex-row mt-2  ">
-            <label className="mr-3">
-              <span class="dark:text-yellow-400  after:content-['*'] after:ml-0.5 after:text-red-500 block w-fit text-sm font-medium text-slate-700">
+          <div className="flex flex-row mt-2 ">
+            <label className="mr-3 w-5/12">
+              <span className="dark:text-yellow-400  after:content-['*'] after:ml-0.5 after:text-red-500 block w-fit text-sm font-medium text-slate-700">
                 name
               </span>
               <input
                 required
                 type="text"
                 min="4"
-                className="mt-1 px-3 dark:text-white  py-2 dark:bg-slate-800 bg-white border shadow-sm border-slate-300 placeholder:italic placeholder:text-slate-400 w-80 focus:outline-none focus:border-yellow-200 focus:ring-yellow-200 rounded-md sm:text-sm focus:ring-1"
+                className="mt-1 px-3 dark:text-white  py-2 dark:bg-slate-800 bg-white border shadow-sm border-slate-300 placeholder:italic placeholder:text-slate-400 w-full focus:outline-none focus:border-yellow-200 focus:ring-yellow-200 rounded-md sm:text-sm focus:ring-1"
                 placeholder="i.e kevin"
                 name="name"
               />
             </label>
-            <label>
-              <span class="dark:text-yellow-400 after:content-['*'] after:ml-0.5 after:text-red-500 block w-fit text-sm font-medium text-slate-700">
+            <label className="w-7/12">
+              <span className="dark:text-yellow-400 after:content-['*'] after:ml-0.5 after:text-red-500 block w-fit text-sm font-medium text-slate-700">
                 Email
               </span>
               <input
                 required
                 type="email"
                 name="email"
-                className="peer mt-1 px-3 dark:text-white  py-2 dark:bg-slate-800 bg-white border shadow-sm border-slate-300 placeholder:italic placeholder:text-slate-400 w-80 focus:outline-none focus:border-yellow-200 focus:ring-yellow-200 rounded-md sm:text-sm focus:ring-1"
+                className="peer mt-1 px-3 dark:text-white  py-2 dark:bg-slate-800 bg-white border shadow-sm border-slate-300 placeholder:italic placeholder:text-slate-400  focus:outline-none focus:border-yellow-200 focus:ring-yellow-200 rounded-md sm:text-sm focus:ring-1 w-full"
                 placeholder="you@example.com"
               />
-              <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
+              <p className="mt-2 invisible peer-invalid:visible text-red-400 text-sm">
                 Please provide a valid email address.
               </p>
             </label>
@@ -145,13 +147,12 @@ function SliderComponent() {
             required
             className=" px-3 py-2 dark:text-white  dark:bg-slate-800 mt-3 min-h-[30vh] bg-white border shadow-sm border-slate-300 placeholder:italic placeholder:text-slate-400 w-full text-xl focus:outline-none focus:border-yellow-200 block focus:ring-yellow-200 rounded-md sm:text-sm focus:ring-1"
             type="text"
-            placeholder="kjkfhhb"
-          >
-            type your message here....
-          </textarea>
+            placeholder="type your message here...."
+          />
+
           <button
             type="submit"
-            class="inline-block mt-3 px-6 py-2.5 bg-blue-600 dark:bg-yellow-400 text-white dark:text-black  font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            className="inline-block mt-3 px-6 py-2.5 bg-blue-600 dark:bg-yellow-400 text-white dark:text-black  font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
             onSubmit={(e) => {
               e.preventDefault();
             }}
@@ -159,6 +160,12 @@ function SliderComponent() {
             SEND
           </button>
         </form>
+        <div className="hidden md:grid  w-8/12 h-[100%] bg-[#ecb723] rounded-xl ">
+          <h1 className="text-6xl text-[#000223] font-[Romanesco] font-bold text-center h-[12vh] mt-[3vh]">
+            get in touch
+          </h1>
+          <img src={contact} alt="me" className="h-[53vh] " />
+        </div>
       </div>
     </div>
   );
