@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ["Romanesco", "system-ui"],
+      sans: ["Romanesco", "system-ui", "Arya", "Style Script"],
     },
   },
   plugins: [],

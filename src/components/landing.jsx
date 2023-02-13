@@ -20,6 +20,7 @@ import figma from "../assets/figma.png";
 import swagger from "../assets/swagger.png";
 import jest from "../assets/jest.png";
 import git from "../assets/git.png";
+import Footer from "./footer";
 
 function Landing() {
   AOS.init({
@@ -231,11 +232,12 @@ function Landing() {
             })}
           </div>
         </div>
-        <div className="dark:bg-[#040b1e] w-full h-full absolute top-full lg:pt-20  bg-[#fcfcfc] ">
+        <div className="dark:bg-[#040b1e] w-full  absolute top-full lg:pt-20  bg-[#fcfcfc] ">
           <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2 mt-12   ">
             PROJECTS
           </p>
           <SliderComponent />
+          <Footer />
         </div>
       </div>
     </div>

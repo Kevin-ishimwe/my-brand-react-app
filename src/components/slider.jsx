@@ -80,7 +80,7 @@ function SliderComponent() {
           {slides.map(({ img, name, demo }) => {
             return (
               <div
-              key={img}
+                key={img}
                 id="div_see"
                 className="   m-1 rounded-md cursor-pointer overflow-hidden relative"
               >
@@ -104,8 +104,11 @@ function SliderComponent() {
           })}
         </Slider>
       </div>
-      <div className="flex w-11/12 h-[68vh] mx-auto shadow-2xl rounded-2xl dark:bg-slate-900 lg:min-w-[870px] mt-20 lg:w-8/12 md:mt-0">
-        <form className="flex flex-col w-full   md:w-7/12 p-7 lg:w-9/12">
+      <div className="flex w-11/12 pb-4 mx-auto shadow-[2px 3px 20px #8080807a] rounded-2xl dark:bg-slate-900 mt-20 lg:w-5/12 md:mt-0">
+        <form className="flex flex-col w-full px-5">
+          <h1 className=" text-center  text-6xl font-semibold font-sans mb-4 text-[#040b1e]">
+            get in touch
+          </h1>
           <blockquote className="text-2xl font-semibold italic text-center text-slate-900 dark:text-gray-200">
             im always
             <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-yellow-500 relative inline-block mx-2">
@@ -160,12 +163,12 @@ function SliderComponent() {
             SEND
           </button>
         </form>
-        <div className="hidden md:grid  w-8/12 h-[100%] bg-[#ecb723] rounded-xl ">
+        {/* <div className="hidden md:grid  h-[100%] bg-[#ecb723] rounded-xl ">
           <h1 className="text-6xl text-[#000223] font-[Romanesco] font-bold text-center h-[12vh] mt-[3vh]">
             get in touch
           </h1>
           <img src={contact} alt="me" className="h-[53vh] " />
-        </div>
+        </div> */}
       </div>
     </div>
   );
