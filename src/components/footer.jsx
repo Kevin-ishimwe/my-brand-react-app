@@ -33,7 +33,12 @@ function Footer() {
           </a>
           <a href="blogs" className="text-white text-xl m-1 ">
             <li>Blogs</li>
-            <li></li>
+          </a>
+          <a
+            href="/my-brand-react-app/login"
+            className="text-white text-xl m-1 "
+          >
+            <li>admin</li>
           </a>
         </ul>
       </div>
