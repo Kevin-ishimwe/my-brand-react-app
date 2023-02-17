@@ -57,7 +57,27 @@ code {
   width: 100%;
   height: 100%;
 }
-
+#dangerouslySetInnerHTML p {
+  font-size: larger;
+  line-height: 1.55;
+  margin: 1% 0%;
+  font-family: Roboto Slab, Times New Roman, Times, serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  color: #1e1e1e;
+}
+#dangerouslySetInnerHTML li {
+  font-size: large;
+  line-height: 1.25;
+  margin: 2% 0%;
+  color: #261d1d;
+}
+#dangerouslySetInnerHTML iframe {
+  width: 100%;
+  min-height: 70vh;
+}
+.dark #dangerouslySetInnerHTML p {
+  color: rgb(145, 166, 175);
+}
 @media screen and (max-width: 768px) {
   #hamburger {
     padding: 1% 1%;
