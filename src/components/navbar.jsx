@@ -5,6 +5,7 @@ import { RxSun } from "react-icons/rx";
 import { FaRegTimesCircle } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   let last = window.scrollY;
@@ -69,30 +70,35 @@ function Navbar() {
           <li id="menu_item" className="pl-2 mt-1">
             <a
               href="/my-brand-react-app/"
-              className=" dark:text-[#000223]   z-10  text-2xl font-medium dark:text-yellow-500 md:text-[#black]"
+              className="    z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]"
             >
               HOME
             </a>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
-            <a className=" dark:text-[#000223]   z-10  text-2xl font-medium dark:text-yellow-500 md:text-[#black]">
+            <a className="    z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]">
               ABOUT ME
             </a>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
-            <a className=" dark:text-[#000223]   z-10  text-2xl font-medium dark:text-yellow-500 md:text-[#black]">
+            <a className="   z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]">
               MY WORK
             </a>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
-            <a className=" dark:text-[#000223]   z-10  text-2xl font-medium dark:text-yellow-500 md:text-[#black]">
+            <NavLink
+              to={"/my-brand-react-app/allblogs"}
+              spy={true}
+              smooth={true}
+              className="    z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]"
+            >
               BLOGS
-            </a>
+            </NavLink>
           </li>
         </ul>
 
         <HiMenu
-          className=" text-4xl mt-3 mr-5 text-white md:hidden"
+          className=" text-4xl mt-3 mr-2 text-white md:hidden"
           onClick={() => {
             document.getElementById("hamburger").style =
               "clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);";

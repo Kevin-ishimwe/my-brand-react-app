@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 
-function AllBlogs() {
+function AllBlogs({num}) {
   const [blogs, setblogs] = useState([]);
   useEffect(() => {
     fetch("https://fair-teal-chinchilla-tam.cyclic.app/getblogs", {
@@ -15,7 +15,7 @@ function AllBlogs() {
       .then((res) => res.json())
       .then((data) => {
         setblogs(data);
-        console.log(data);
+     
       });
   }, []);
   return (
