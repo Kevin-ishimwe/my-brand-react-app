@@ -22,12 +22,12 @@ import jest from "../assets/jest.png";
 import git from "../assets/git.png";
 import Footer from "./footer";
 
-
 function Landing() {
-   const [blogs, setblogs] = useState([]);
+  const [blogs, setblogs] = useState([]);
   AOS.init({
-    offset: 200,
-    duration: 400,
+    duration: 100,
+    offset: 80,
+    easing: "ease-in-sine",
   });
   const front_endskills = [
     { img: html5, name: "html5" },
@@ -123,7 +123,7 @@ function Landing() {
                 data-aos="fade"
                 data-aos-duration="1000"
                 data-aos-delay="100"
-                className="dark:text-[#aaaa8d] sm:dark:ml-6 w-full text-center md:text-left md:dark:w-8/12 sm:ml-4 md:ml-8 sm:w-fit md:w-2/3 dark:lg:w-8/12 lg:w-9/12 lg:ml-20 mt-4 text-xl text-gray-800"
+                className="dark:text-[#aaaa8d] sm:dark:ml-6 w-full text-center md:text-left md:dark:w-8/12 sm:ml-4 md:ml-8 sm:w-fit md:w-2/3 dark:lg:w-7/12 lg:w-9/12 lg:ml-20 mt-4 text-xl text-gray-800"
               >
                 I strive to create visually appealing and functional websites
                 that deliver a great user experience. I am always looking for
@@ -144,6 +144,9 @@ function Landing() {
             </div>
 
             <img
+              data-aos="fade-zoom-in"
+              data-aos-duration="2000"
+              data-aos-once={true}
               className="dark:rounded-full lg:dark:rounded-none md:dark:bg-inherit md:dark:rounded-none lg:dark:bg-yellow-400 lg:dark:w-6/12 dark:bg-yellow-400  relative  rounded-full  mt-20 sm:mt-32 md:mt-0 bg-white h-2/3 w-8/12 mx-auto sm:rounded-none sm:bg-inherit sm:h-2/3 md:w-6/12 md:absolute md:top-0 md:-right-0  lg:fixed top-0 lg:-right-7 md:h-full z-10"
               alt="my_AI_generated_image"
               src={herobg}
@@ -157,16 +160,21 @@ function Landing() {
         id="insidernav"
         className="dark:bg-[#040b1e] relative lg:absolute top-full  md:pt-32 w-full min-h-full  z-5"
       >
-        <div data-aos="fade-up" data-aos-duration="1000" ref={about}>
+        <div
+          data-aos="fade-up"
+          data-aos-once={true}
+          data-aos-duration="1000"
+          ref={about}
+        >
           <p className="lg:dark:ml-8 sm:ml-6  dark:text-yellow-300 text-4xl text-[#000223] font-semibold text-center md:text-left  mb-2  lg:ml-20 pt-10">
             ABOUT ME
           </p>
           <div className=" flex flex-col justify-center ">
             <p className="lg:dark:ml-8 w-11/12 text-center mx-auto  dark:text-[#aaaa8d] dark:lg:w-5/12 md:text-left lg:w-5/12 lg:ml-20 text-lg text-gray-800">
-              With 2 years of experience, I have honed my ability to stay
+              With over 2 years of experience, I have honed my ability to stay
               focused and productive, even under heavy amounts of stress. My
               friends often come to me for help with their coding projects,
-              which is a testament to my skills and dedication to the craft. One
+              which is a testimony to my skills and dedication to the craft. One
               of my greatest strengths as a web developer is my problem-solving
               skills.
               <br></br> I find great satisfaction in breaking down complex
@@ -195,7 +203,12 @@ function Landing() {
           <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2 mt-6  lg:ml-28 ">
             FRONT-END
           </p>
-          <div className="  flex flex-wrap  justify-center  h-26">
+          <div
+            data-aos="fade-up"
+            data-aos-offset="4"
+            data-aos-duration="1000"
+            className="  flex flex-wrap  justify-center  h-26"
+          >
             {front_endskills.map(({ img, name }) => {
               return (
                 <div
@@ -213,7 +226,12 @@ function Landing() {
           <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2  mt-8 ">
             BACKEND-END
           </p>
-          <div className="  flex flex-wrap  justify-center  h-26">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            className="  flex flex-wrap  justify-center  h-26"
+          >
             {back_endskills.map(({ img, name }) => {
               return (
                 <div
@@ -231,7 +249,12 @@ function Landing() {
           <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2 mt-6  lg:ml-28 ">
             Others
           </p>
-          <div className="  flex flex-wrap  justify-center  h-26">
+          <div
+            data-aos="fade-up"
+            data-aos-offset="30"
+            data-aos-duration="1000"
+            className="  flex flex-wrap  justify-center  h-26"
+          >
             {other_skills.map(({ img, name }) => {
               return (
                 <div
@@ -249,11 +272,15 @@ function Landing() {
         </div>
         <div className="dark:bg-[#040b1e] w-full  absolute top-full lg:pt-20  bg-[#fcfcfc] ">
           {
-            <div className="flex pt-32 ">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              className="flex pt-32 overflow-x-scroll md:overflow-auto "
+            >
               {blogs.map(({ blogTitle, _id, blogDescription, blogImg }) => {
                 return (
                   <div className="flex justify-center mx-3 scale-95" key={_id}>
-                    <div className="rounded-lg shadow-2xl bg-white dark:bg-slate-900  max-w-sm">
+                    <div className="rounded-lg shadow-2xl bg-white dark:bg-slate-900  max-w-sm min-w-[25em] ">
                       <a href={`/my-brand-react-app/singleblog?id=${_id}`}>
                         <img className="rounded-t-lg" src={blogImg} alt="" />
                       </a>
@@ -289,8 +316,8 @@ function Landing() {
           }
           <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2 mt-12   ">
             PROJECTS
-            <SliderComponent />
           </p>
+          <SliderComponent />
           <Footer />
         </div>
       </div>

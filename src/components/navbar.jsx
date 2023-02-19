@@ -22,16 +22,26 @@ function Navbar() {
     }
     last = window.scrollY;
   };
-  const [theme, settheme] = useState("light");
+  const [theme, settheme] = useState("dark");
+  useEffect(() => {
+    if (localStorage.getItem("theme") === "light") {
+      settheme("light");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
   const handleTheme = () => {
     if (theme === "light") {
       settheme("dark");
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+
       AOS.refreshHard("my-element");
       AOS.init();
     } else {
       settheme("light");
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   };
 
@@ -88,8 +98,8 @@ function Navbar() {
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
             <NavLink
               to={"/my-brand-react-app/allblogs"}
-              spy={true}
-              smooth={true}
+              spy="true"
+              smooth="true"
               className="    z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]"
             >
               BLOGS
@@ -98,7 +108,7 @@ function Navbar() {
         </ul>
 
         <HiMenu
-          className=" text-4xl mt-3 mr-2 text-white md:hidden"
+          className=" text-4xl mt-3 mr-0 text-[#040b1e] dark:text-white md:hidden"
           onClick={() => {
             document.getElementById("hamburger").style =
               "clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);";

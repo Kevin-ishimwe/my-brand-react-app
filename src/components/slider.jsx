@@ -5,8 +5,24 @@ import "slick-carousel/slick/slick-theme.css";
 import AIapp from "../assets/projects/AIapp.JPG";
 import AGCera from "../assets/projects/AGCera.JPG";
 import musicapp from "../assets/projects/musicapp.JPG";
-import contact from "../assets/contact.png";
 
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        background: "grey",
+        scale: "1",
+        borderRadius: "50%",
+        padding: ".1% 0%",
+      }}
+      onClick={onClick}
+    />
+  );
+}
 function SliderComponent() {
   const settings = {
     lazyLoad: true,
@@ -18,9 +34,10 @@ function SliderComponent() {
     speed: 500,
     slidesToShow: 3,
     autoplay: true,
-    autoplaySpeed: 1700,
+    autoplaySpeed: 2000,
     slidesToScroll: 1,
-
+    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
