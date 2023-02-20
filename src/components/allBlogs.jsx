@@ -30,7 +30,7 @@ function AllBlogs({ num }) {
             >
               <div className="rounded-lg shadow-2xl bg-white dark:bg-slate-900  max-w-sm">
                 <Link
-                  to={`/my-brand-react-app/singleblog?id=${_id}`}
+                  to={`/singleblog?id=${_id}`}
                   spy="true"
                   smooth="true"
                 >
@@ -44,7 +44,7 @@ function AllBlogs({ num }) {
                     {blogDescription}
                   </p>
                   <Link
-                    to={`/my-brand-react-app/singleblog?id=${_id}`}
+                    to={`/singleblog?id=${_id}`}
                     spy="true"
                     smooth="true"
                     className=" decoration-none w-fit  flex px-2 py-1.5 dark:bg-[#182449] bg-yellow-500  mt-2 dark:text-yellow-400 text-black font-semibold text-sm  uppercase  shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"

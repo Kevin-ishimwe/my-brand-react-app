@@ -5,7 +5,7 @@ import { RxSun } from "react-icons/rx";
 import { FaRegTimesCircle } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 
 function Navbar() {
   let last = window.scrollY;
@@ -78,26 +78,26 @@ function Navbar() {
             />
           </li>
           <li id="menu_item" className="pl-2 mt-1">
-            <a
-              href="/my-brand-react-app/"
+            <Link
+              href="/"
               className="    z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]"
             >
               HOME
-            </a>
+            </Link>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
-            <a className="    z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]">
+            <NavLink className="    z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]">
               ABOUT ME
-            </a>
+            </NavLink>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
-            <a className="   z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]">
+            <NavLink className="   z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]">
               MY WORK
-            </a>
+            </NavLink>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
             <NavLink
-              to={"/my-brand-react-app/allblogs"}
+              to={"/allblogs"}
               spy="true"
               smooth="true"
               className="    z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]"

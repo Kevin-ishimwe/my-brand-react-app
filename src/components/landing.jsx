@@ -24,11 +24,9 @@ import Footer from "./footer";
 
 function Landing() {
   const [blogs, setblogs] = useState([]);
-  AOS.init({
-    duration: 100,
-    offset: 80,
-    easing: "ease-in-sine",
-  });
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const front_endskills = [
     { img: html5, name: "html5" },
     { img: css, name: "css" },
@@ -196,17 +194,25 @@ function Landing() {
             </button>
           </div>
         </div>
-        <div className="dark:bg-[#040b1e] relative lg:w-6/12 lg:mt-96 lg:pt-72 lg:pb-32  lg:float-right  ">
+        <div
+          id="anchor_p"
+          data-aos="fade-left"
+          className="dark:bg-[#040b1e] relative lg:w-6/12 lg:mt-96 lg:pt-72 lg:pb-32  lg:float-right  "
+        >
           <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-yellow-300 text-5xl text-[#000223] font-semibold  mb-6  lg:ml-28 lg:mt-9 ">
             SKILLS
           </p>
-          <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2 mt-6  lg:ml-28 ">
+          <p
+            id="anchor_p"
+            className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2 mt-6  lg:ml-28 "
+          >
             FRONT-END
           </p>
           <div
-            data-aos="fade-up"
-            data-aos-offset="4"
+            id="skill1"
+            data-aos-anchor="#anchor_p"
             data-aos-duration="1000"
+            data-aos="fade-up"
             className="  flex flex-wrap  justify-center  h-26"
           >
             {front_endskills.map(({ img, name }) => {
@@ -228,8 +234,8 @@ function Landing() {
           </p>
           <div
             data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-offset="20"
+            data-aos-anchor="#skill1"
+            data-aos-duration="900"
             className="  flex flex-wrap  justify-center  h-26"
           >
             {back_endskills.map(({ img, name }) => {
@@ -251,7 +257,7 @@ function Landing() {
           </p>
           <div
             data-aos="fade-up"
-            data-aos-offset="30"
+            data-aos-anchor="#skill1"
             data-aos-duration="1000"
             className="  flex flex-wrap  justify-center  h-26"
           >
@@ -273,16 +279,26 @@ function Landing() {
         <div className="dark:bg-[#040b1e] w-full  absolute top-full lg:pt-20  bg-[#fcfcfc] ">
           {
             <div
+              id="parent"
               data-aos="fade-up"
+              data-aos-offset="0"
+              data-aos-anchor-placement="top-bottom"
               data-aos-duration="1000"
-              className="flex pt-32 overflow-x-scroll md:overflow-auto "
+              className="flex pt-12 md:pt-5 overflow-x-scroll md:overflow-auto "
             >
               {blogs.map(({ blogTitle, _id, blogDescription, blogImg }) => {
                 return (
                   <div className="flex justify-center mx-3 scale-95" key={_id}>
                     <div className="rounded-lg shadow-2xl bg-white dark:bg-slate-900  max-w-sm min-w-[25em] ">
                       <a href={`/my-brand-react-app/singleblog?id=${_id}`}>
-                        <img className="rounded-t-lg" src={blogImg} alt="" />
+                        <img
+                          data-aos-anchor="#parent"
+                          data-aos="flip-right"
+                          data-aos-offset="30"
+                          className="rounded-t-lg"
+                          src={blogImg}
+                          alt=""
+                        />
                       </a>
                       <div className="p-6">
                         <h5 className="text-gray-900 text-xl dark:text-yellow-300 font-semibold ">
@@ -292,7 +308,7 @@ function Landing() {
                           {blogDescription}
                         </p>
                         <a
-                          href={`/my-brand-react-app/singleblog?id=${_id}`}
+                          href={`/singleblog?id=${_id}`}
                           className=" decoration-none w-fit  flex px-2 py-1.5 dark:bg-[#182449] bg-yellow-500  mt-2 dark:text-yellow-400 text-black font-semibold text-sm  uppercase  shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                         >
                           READ MORE

@@ -217,10 +217,7 @@ function Footer() {
             </li>
 
             <li>
-              <a
-                href="/my-brand-react-app/login"
-                className="text-white text-xl mx-2 "
-              >
+              <a href="/login" className="text-white text-xl mx-2 ">
                 admin
               </a>
             </li>

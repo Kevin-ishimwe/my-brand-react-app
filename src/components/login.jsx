@@ -1,13 +1,17 @@
 import React, { useRef, useState } from "react";
 import Navbar from "./navbar";
 import { FaUserCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 function Login() {
   const [err, seterr] = useState("");
   const [message, setmessage] = useState("");
   const popup = useRef();
+  const navigate=useNavigate()
   const handleLogin = async (e) => {
     e.preventDefault();
-    e.target.lastElementChild.textContent = "LOADING...";
+    e.target.lastElementChild.lastChild.textContent = "LOADING...";
+    e.target.lastElementChild.firstChild.style.display = "grid";
+    console.log(e.target.lastElementChild.firstChild);
     await fetch("https://fair-teal-chinchilla-tam.cyclic.app/login", {
       method: "POST",
       headers: {
@@ -23,7 +27,8 @@ function Login() {
     })
       .then((res) => res.json())
       .then((data) => {
-        e.target.lastElementChild.textContent = "LOGIN";
+        e.target.lastElementChild.lastChild.textContent = "LOGIN";
+        e.target.lastElementChild.firstChild.style.display = "none";
         console.log(data);
         popup.current.style.display = "flex";
         if (data.token) {
@@ -31,7 +36,8 @@ function Login() {
           setTimeout(() => {
             popup.current.style.display = "none";
             localStorage.setItem("token", data.token);
-            window.location.href = "/my-brand-react-app/allblogs";
+            navigate("/Dashboard")
+            
           }, 1500);
         } else {
           seterr(`${data.message}`);
@@ -116,15 +122,21 @@ function Login() {
                     placeholder="Password"
                   />
                 </div>
-
-                <button
-                  type="submit"
-                  className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
-                  data-mdb-ripple="true"
-                  data-mdb-ripple-color="light"
-                >
-                  Sign in
-                </button>
+                <div className="flex justify-center ">
+                  <div
+                    id="wait"
+                    className=" hidden h-5 w-5 mt-3  mr-24 absolute animate-spin rounded-full border-2 border-solid border-white border-r-transparent  motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                    role="status"
+                  />
+                  <button
+                    type="submit"
+                    className="px-2 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                  >
+                    <span className="">Sign in</span>
+                  </button>
+                </div>
               </form>
             </div>
           </div>

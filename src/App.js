@@ -5,28 +5,33 @@ import Login from "./components/login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AllBlogs from "./components/allBlogs";
 import Singleblog from "./components/singleBlog";
+import Dashboard from "./components/DASHBOARD";
 function App() {
   return (
     <>
       <Router basename="/my-brand-react-app">
         <Routes>
-          <Route exact path="/*" element={<Landing />} />
-          <Route exact path="/my-brand-react-app/" element={<Landing />} />
-          <Route exact path="/my-brand-react-app/login" element={<Login />} />
+          <Route exact path="/" element={<Landing />} />
           <Route
             exact
-            path="/my-brand-react-app/allblogs"
+            path="/allblogs"
             element={<AllBlogs />}
           />
           <Route
             exact
-            path="/my-brand-react-app/singleblog"
+            path="/singleblog"
             element={<Singleblog />}
           />
           <Route
             exact
-            path="/my-brand-react-app/slider"
+            path="/slider"
             element={<SliderComponent />}
+          />
+          <Route exact path="/login" element={<Login />} />
+          <Route
+            exact
+            path="/Dashboard"
+            element={<Dashboard />}
           />
         </Routes>
       </Router>
