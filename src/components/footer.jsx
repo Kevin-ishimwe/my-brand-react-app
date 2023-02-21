@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="text-center  bg-[#000223]  text-white mt-10 border-white border-solid">
@@ -217,9 +217,9 @@ function Footer() {
             </li>
 
             <li>
-              <a href="/login" className="text-white text-xl mx-2 ">
+              <Link to={"/login"} className="text-white text-xl mx-2 ">
                 admin
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

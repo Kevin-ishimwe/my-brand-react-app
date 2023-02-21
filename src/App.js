@@ -5,7 +5,8 @@ import Login from "./components/login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AllBlogs from "./components/allBlogs";
 import Singleblog from "./components/singleBlog";
-import Dashboard from "./components/DASHBOARD";
+import Dashboard from "./components/admin/DASHBOARD";
+import AddBlog from "./components/admin/AddBlog";
 function App() {
   return (
     <>
@@ -32,6 +33,11 @@ function App() {
             exact
             path="/Dashboard"
             element={<Dashboard />}
+          />
+         <Route
+            exact
+            path="/addblog"
+            element={<AddBlog />}
           />
         </Routes>
       </Router>
