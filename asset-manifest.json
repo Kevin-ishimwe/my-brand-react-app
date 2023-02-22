@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my-brand-react-app/static/css/main.a28597bb.css",
-    "main.js": "/my-brand-react-app/static/js/main.cf30efca.js",
+    "main.css": "/my-brand-react-app/static/css/main.e5e2843e.css",
+    "main.js": "/my-brand-react-app/static/js/main.41c7fd1c.js",
     "static/js/787.a91260d6.chunk.js": "/my-brand-react-app/static/js/787.a91260d6.chunk.js",
     "static/media/herobg.png": "/my-brand-react-app/static/media/herobg.801494a21881c2eabcf4.png",
     "static/media/AIapp.JPG": "/my-brand-react-app/static/media/AIapp.3ae7f9cac8f14b9bdfbc.JPG",
@@ -21,12 +21,12 @@
     "static/media/slick.ttf": "/my-brand-react-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/my-brand-react-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/my-brand-react-app/index.html",
-    "main.a28597bb.css.map": "/my-brand-react-app/static/css/main.a28597bb.css.map",
-    "main.cf30efca.js.map": "/my-brand-react-app/static/js/main.cf30efca.js.map",
+    "main.e5e2843e.css.map": "/my-brand-react-app/static/css/main.e5e2843e.css.map",
+    "main.41c7fd1c.js.map": "/my-brand-react-app/static/js/main.41c7fd1c.js.map",
     "787.a91260d6.chunk.js.map": "/my-brand-react-app/static/js/787.a91260d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a28597bb.css",
-    "static/js/main.cf30efca.js"
+    "static/css/main.e5e2843e.css",
+    "static/js/main.41c7fd1c.js"
   ]
 }
