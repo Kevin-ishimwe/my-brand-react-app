@@ -1,23 +1,18 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect,useContext } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import { NavLink,Link } from "react-router-dom";
+import BlogsContext from "./getblogs";
 
 function AllBlogs({ num }) {
   const [blogs, setblogs] = useState([]);
-  useEffect(() => {
-    fetch("https://fair-teal-chinchilla-tam.cyclic.app/getblogs", {
-      method: "GET",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setblogs(data);
-      });
-  }, []);
+
+const allblogs = useContext(BlogsContext);
+
+useEffect(() => {
+    setblogs(allblogs)
+    
+  }, [allblogs]);
   return (
     <div className="dark:bg-[#040b1e] min-h-[100vh] w-full">
       <Navbar />

@@ -6,7 +6,9 @@ function Footer() {
       <div className="container px-6 pt-10">
         <div className="flex justify-center mb-6">
           <a
-            href="#!"
+            rel="noreferrer"
+            href="https://www.facebook.com/profile.php?id=100006337833890&mibextid=ZbWKwL"
+            target="_blank"
             type="button"
             className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
           >
@@ -28,7 +30,9 @@ function Footer() {
           </a>
 
           <a
-            href="#!"
+            href="https://twitter.com/kvnthecat?t=pxeNH9U0xJLv_U5J2jZ1dw&s=08"
+            rel="noreferrer"
+            target="_blank"
             type="button"
             className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
           >
@@ -50,7 +54,9 @@ function Footer() {
           </a>
 
           <a
-            href="#!"
+            href="mailto: ishimwekevin45@gmail.com"
+            rel="noreferrer"
+            target="_blank"
             type="button"
             className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
           >
@@ -72,7 +78,9 @@ function Footer() {
           </a>
 
           <a
-            href="#!"
+            href="https://instagram.com/kevin_ish_mw?igshid=ZDdkNTZiNTM="
+            rel="noreferrer"
+            target="_blank"
             type="button"
             className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
           >
@@ -94,7 +102,9 @@ function Footer() {
           </a>
 
           <a
-            href="#!"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/ishimwe-kevin-30538625a"
+            target="_blank"
             type="button"
             className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
           >
@@ -116,7 +126,9 @@ function Footer() {
           </a>
 
           <a
-            href="#!"
+            rel="noreferrer"
+            href="https://github.com/Kevin-ishimwe"
+            target="_blank"
             type="button"
             className="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1"
           >

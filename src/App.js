@@ -7,39 +7,78 @@ import AllBlogs from "./components/allBlogs";
 import Singleblog from "./components/singleBlog";
 import Dashboard from "./components/admin/DASHBOARD";
 import AddBlog from "./components/admin/AddBlog";
+import ManageBlogs from "./components/admin/manageBlog";
+import { BlogsProvider } from "./components/getblogs";
+import { AuthProvider } from "./components/authContext";
+import ProtectedRoute from "./protectedRoutes";
 function App() {
+  console.log(<ProtectedRoute />);
   return (
     <>
       <Router basename="/my-brand-react-app">
-        <Routes>
-          <Route exact path="/" element={<Landing />} />
-          <Route
-            exact
-            path="/allblogs"
-            element={<AllBlogs />}
-          />
-          <Route
-            exact
-            path="/singleblog"
-            element={<Singleblog />}
-          />
-          <Route
-            exact
-            path="/slider"
-            element={<SliderComponent />}
-          />
-          <Route exact path="/login" element={<Login />} />
-          <Route
-            exact
-            path="/Dashboard"
-            element={<Dashboard />}
-          />
-         <Route
-            exact
-            path="/addblog"
-            element={<AddBlog />}
-          />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <BlogsProvider>
+                  <Landing />
+                </BlogsProvider>
+              }
+            />
+            <Route
+              exact
+              path="/allblogs"
+              element={
+                <BlogsProvider>
+                  <AllBlogs />
+                </BlogsProvider>
+              }
+            />
+            <Route
+              exact
+              path="/singleblog"
+              element={
+                <BlogsProvider>
+                  <Singleblog />
+                </BlogsProvider>
+              }
+            />
+            <Route exact path="/slider" element={<SliderComponent />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route
+              exact
+              path="/Dashboard"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              exact
+              path="/addblog"
+              element={
+                <ProtectedRoute>
+                  <AddBlog />{" "}
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              exact
+              path="/manageBlogs"
+              element={
+                <ProtectedRoute>
+                  <BlogsProvider>
+                    <ManageBlogs />
+                  </BlogsProvider>
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+        </AuthProvider>
       </Router>
     </>
   );

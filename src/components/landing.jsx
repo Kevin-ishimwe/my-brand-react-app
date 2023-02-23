@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { HiOutlineArrowNarrowDown } from "react-icons/hi";
 import SliderComponent from "./slider";
 import herobg from "../assets/herobg.png";
@@ -21,9 +21,12 @@ import swagger from "../assets/swagger.png";
 import jest from "../assets/jest.png";
 import git from "../assets/git.png";
 import Footer from "./footer";
+import BlogsContext from "./getblogs";
 
 function Landing() {
   const [blogs, setblogs] = useState([]);
+  const allblogs = useContext(BlogsContext);
+  
   useEffect(() => {
     AOS.init();
   }, []);
@@ -77,18 +80,8 @@ function Landing() {
     };
   }, []);
   useEffect(() => {
-    fetch("https://fair-teal-chinchilla-tam.cyclic.app/getblogs", {
-      method: "GET",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setblogs(data);
-      });
-  }, []);
+    setblogs(allblogs)
+  }, [allblogs]);
 
   return (
     <div id="landingnone">
@@ -129,12 +122,24 @@ function Landing() {
                 life. Let's create something amazing together!
               </p>
               <div className="flex justify-center mb-6 md:justify-start  ">
-                <button className="sm:dark:ml-6  dark:bg-[#B4862A] dark:text-black font-semibold ease-out duration-300 bg-[#00034a] text-2xl mt-5  p-2 mx-a text-white sm:ml-4 lg:ml-20 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105">
+                <button
+                  onClick={() => {
+                    if (window.visualViewport.width > 900) {
+                      window.scrollTo(0, 3850);
+                    } else {
+                      document.getElementById("ContactPage").scrollIntoView();
+                    }
+                  }}
+                  className="sm:dark:ml-6  dark:bg-[#B4862A] dark:text-black font-semibold ease-out duration-300 bg-[#00034a] text-2xl mt-5  p-2 mx-a text-white sm:ml-4 lg:ml-20 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
+                >
                   CONTACT ME
                 </button>
-                <button className="dark:text-yellow-400 dark:border-yellow-300 ease-out duration-300 learn border-solid text-2xl p-2 text-white ml-2 mt-5 pr-5 hover:bg-white hover:text-[#85650e] hover:scale-105">
+                <a
+                  href="#skillz"
+                  className="dark:text-yellow-400 dark:border-yellow-300 ease-out duration-300 learn border-solid text-2xl p-2 text-white ml-2 mt-5 pr-5 hover:bg-white hover:text-[#85650e] hover:scale-105"
+                >
                   LEARN MORE
-                </button>
+                </a>
               </div>
               <a href="#insidernav">
                 <HiOutlineArrowNarrowDown className=" animate-bounce dark:text-yellow-300 dark:ml-4 ml-16 text-3xl" />
@@ -187,8 +192,9 @@ function Landing() {
               continuous learning and growth are key to success in this field.
             </p>
             <button
+              id="skillz"
               data-aos="fade-up"
-              className="lg:dark:ml-8  rounded-full  dark:bg-yellow-400  mx-auto dark:text-black ease-out font-semibold duration-300 bg-[#00034a] text-1xl mt-5 max-w-fit  p-2 mx-a text-white sm:ml-4 lg:ml-28 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
+              className="lg:dark:ml-8  mt-10 rounded-full  dark:bg-yellow-400  mx-auto dark:text-black ease-out font-semibold duration-300 bg-[#00034a] text-1xl mb-5 max-w-fit  p-2 mx-a text-white sm:ml-4 lg:ml-28 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
             >
               DOWNLOAD CV
             </button>
@@ -196,8 +202,8 @@ function Landing() {
         </div>
         <div
           id="anchor_p"
-          data-aos="fade-left"
-          className="dark:bg-[#040b1e] relative lg:w-6/12 lg:mt-96 lg:pt-72 lg:pb-32  lg:float-right  "
+          data-aos="fade-down"
+          className="dark:bg-[#040b1e] relative lg:w-6/12 lg:mt-96 lg:pt-72 lg:pb-32  lg:float-right "
         >
           <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-yellow-300 text-5xl text-[#000223] font-semibold  mb-6  lg:ml-28 lg:mt-9 ">
             SKILLS
@@ -276,7 +282,7 @@ function Landing() {
             })}
           </div>
         </div>
-        <div className="dark:bg-[#040b1e] w-full  absolute top-full lg:pt-20  bg-[#fcfcfc] ">
+        <div className="dark:bg-[#040b1e] w-full  absolute top-full lg:pt-5  bg-[#fcfcfc] ">
           {
             <div
               id="parent"
@@ -284,7 +290,7 @@ function Landing() {
               data-aos-offset="0"
               data-aos-anchor-placement="top-bottom"
               data-aos-duration="1000"
-              className="flex pt-12 md:pt-5 overflow-x-scroll md:overflow-auto "
+              className="flex pt-0 md:pt-5 overflow-x-scroll md:overflow-auto "
             >
               {blogs.map(({ blogTitle, _id, blogDescription, blogImg }) => {
                 return (
@@ -334,6 +340,72 @@ function Landing() {
             PROJECTS
           </p>
           <SliderComponent />
+
+          <div id="ContactPage">
+            <div className="flex w-11/12 pb-4 mx-auto shadow-[2px 3px 20px #8080807a] rounded-2xl dark:bg-slate-900 mt-20 lg:w-5/12 md:mt-0 min-h-[50vh]">
+              <form
+                className="flex flex-col w-full px-5"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                }}
+              >
+                <h1 className=" text-center  text-6xl font-semibold font-sans mb-4 text-[#040b1e] dark:text-yellow-100">
+                  get in touch
+                </h1>
+                <blockquote className="text-2xl font-semibold italic text-center text-slate-900 dark:text-gray-200">
+                  im always
+                  <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-yellow-500 relative inline-block mx-2">
+                    <span className="relative text-white">a text</span>
+                  </span>
+                  away
+                </blockquote>
+                <div className="flex flex-row mt-2 ">
+                  <label className="mr-3 w-5/12">
+                    <span className="dark:text-yellow-400  after:content-['*'] after:ml-0.5 after:text-red-500 block w-fit text-sm font-medium text-slate-700">
+                      name
+                    </span>
+                    <input
+                      required
+                      type="text"
+                      min="4"
+                      className="mt-1 px-3 dark:text-white  py-2 dark:bg-slate-800 bg-white border shadow-sm border-slate-300 placeholder:italic placeholder:text-slate-400 w-full focus:outline-none focus:border-yellow-200 focus:ring-yellow-200 rounded-md sm:text-sm focus:ring-1"
+                      placeholder="i.e kevin"
+                      name="name"
+                    />
+                  </label>
+                  <label className="w-7/12">
+                    <span className="dark:text-yellow-400 after:content-['*'] after:ml-0.5 after:text-red-500 block w-fit text-sm font-medium text-slate-700">
+                      Email
+                    </span>
+                    <input
+                      required
+                      autoFocus
+                      type="email"
+                      name="email"
+                      className="peer mt-1 px-3 dark:text-white  py-2 dark:bg-slate-800 bg-white border shadow-sm border-slate-300 placeholder:italic placeholder:text-slate-400  focus:outline-none focus:border-yellow-200 focus:ring-yellow-200 rounded-md sm:text-sm focus:ring-1 w-full"
+                      placeholder="you@example.com"
+                    />
+                    <p className="mt-2 invisible peer-invalid:visible text-red-400 text-sm">
+                      Please provide a valid email address.
+                    </p>
+                  </label>
+                </div>
+                <textarea
+                  required
+                  className=" px-3 py-2 dark:text-white  dark:bg-slate-800 mt-3 min-h-[30vh] bg-white border shadow-sm border-slate-300 placeholder:italic placeholder:text-slate-400 w-full text-xl focus:outline-none focus:border-yellow-200 block focus:ring-yellow-200 rounded-md sm:text-sm focus:ring-1"
+                  type="text"
+                  placeholder="type your message here...."
+                />
+
+                <button
+                  type="submit"
+                  className="inline-block mt-3  py-2.5 bg-blue-600 dark:bg-yellow-400 text-white dark:text-black dark:active:bg-yellow-200  font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg  transition duration-150 ease-in-out"
+                >
+                  SEND
+                </button>
+              </form>
+            </div>
+          </div>
           <Footer />
         </div>
       </div>

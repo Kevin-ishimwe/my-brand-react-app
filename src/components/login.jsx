@@ -1,12 +1,16 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState,useContext } from "react";
 import Navbar from "./navbar";
 import { FaUserCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "./authContext"
+
+
 function Login() {
   const [err, seterr] = useState("");
   const [message, setmessage] = useState("");
   const popup = useRef();
   const navigate=useNavigate()
+   const { setisauth } = useContext(AuthContext);
   const handleLogin = async (e) => {
     e.preventDefault();
     e.target.lastElementChild.lastChild.textContent = "LOADING...";
@@ -35,6 +39,7 @@ function Login() {
           setmessage("successfully logged in");
           setTimeout(() => {
             popup.current.style.display = "none";
+            setisauth(true)
             localStorage.setItem("token", data.token);
             navigate("/Dashboard")
             

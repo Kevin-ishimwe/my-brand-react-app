@@ -1,33 +1,25 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import { NavLink } from "react-router-dom";
+import BlogsContext from "./getblogs";
 
 function Singleblog() {
   const [blog, setblog] = useState([]);
-  const [sideblog, setsideblog] = useState([]);
+  const [sideblog, setsideblog] = useState([])
+  const[id,setid]=useState([window.location.href.split("id=")[1]])
 
+  const allblogs = useContext(BlogsContext);
   useEffect(() => {
-    fetch("https://fair-teal-chinchilla-tam.cyclic.app/getblogs", {
-      method: "GET",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setsideblog(data);
-        data.filter((element) => {
-          if (element._id === window.location.href.split("id=")[1]) {
-            console.log(element);
-            setblog(element);
-          }
-          return 0;
-        });
-        // setblog(data);
-      });
-  }, []);
+    setsideblog(allblogs);
+    allblogs.filter((element) => {
+      if (element._id ===id ) {
+        console.log(element);
+        setblog(element);
+      }
+      return 0;
+    });
+  }, [allblogs,id]);
   return (
     <div className="dark:bg-[#040b1e] min-h-[100vh] w-full">
       <Navbar />
@@ -51,11 +43,16 @@ function Singleblog() {
       <div className="flex  mt-20 flex-wrap justify-center sm:justify-start ">
         {sideblog.map(({ blogTitle, _id, blogDescription, blogImg }) => {
           return (
-            <a
+            <NavLink
+              key={_id}
               className="m-3 md:max-w-[20em] md:min-w-[10em] w-[90vw] md:w-[30vw] "
-              href={`/my-brand-react-app/singleblog?id=${_id}`}
+              to={`?id=${_id}`}
               spy="true"
               smooth="true"
+              onClick={()=>{
+                setid(_id)
+                window.scrollTo(0,0)
+              }}
             >
               <img className="" src={blogImg} alt="" />
 
@@ -66,12 +63,7 @@ function Singleblog() {
                 <p className="text-gray-700 dark:text-gray-500 text-base h-20 overflow-hidden text-ellipsis whitespace-pre-wrap">
                   {blogDescription}
                 </p>
-                <NavLink
-                  to={`/my-brand-react-app/singleblog?id=${_id}`}
-                  spy="true"
-                  smooth="true"
-                  className=" decoration-none w-fit  flex px-2 py-1.5 dark:bg-[#182449] bg-yellow-500  mt-2 dark:text-yellow-400 text-black font-semibold text-sm  uppercase  shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-                >
+                <div className=" decoration-none w-fit  flex px-2 py-1.5 dark:bg-[#182449] bg-yellow-500  mt-2 dark:text-yellow-400 text-black font-semibold text-sm  uppercase  shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
                   READ MORE
                   <svg
                     className="ml-5 dark:text-yellow-500 "
@@ -83,9 +75,9 @@ function Singleblog() {
                   >
                     <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
                   </svg>
-                </NavLink>
+                </div>
               </div>
-            </a>
+            </NavLink>
           );
         })}
       </div>
