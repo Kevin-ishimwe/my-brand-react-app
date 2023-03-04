@@ -6,24 +6,24 @@ import BlogsContext from "./getblogs";
 
 function Singleblog() {
   const [blog, setblog] = useState([]);
-  const [sideblog, setsideblog] = useState([])
-  const[id,setid]=useState([window.location.href.split("id=")[1]])
+  const [sideblog, setsideblog] = useState([]);
+  const [id, setid] = useState([window.location.href.split("id=")[1]]);
 
   const allblogs = useContext(BlogsContext);
   useEffect(() => {
     setsideblog(allblogs);
     allblogs.filter((element) => {
-      if (element._id ===id ) {
+      if (element._id === id) {
         console.log(element);
         setblog(element);
       }
       return 0;
     });
-  }, [allblogs,id]);
+  }, [allblogs, id]);
   return (
     <div className="dark:bg-[#040b1e] min-h-[100vh] w-full">
       <Navbar />
-      <div className="flex flex-wrap w-full md:w-8/12 sm:ml-10 min-h-full">
+      <div className="flex flex-wrap w-full md:w-10/12 sm:ml-7 min-h-full md:mx-auto ">
         <div className=" mx-auto pt-28">
           <h1 className="text-4xl mx-2 sm:mx-0 sm:text-[xxx-large] mb-3 font-semibold text-[#0e0909] leading-[1em] first-of-type:first-letter:uppercase dark:text-slate-400">
             {blog.blogTitle}
@@ -31,7 +31,7 @@ function Singleblog() {
           <p className="text-[large] mx-2 sm:mx-0  sm:text-xl  text-[#353c4b] font-semibold leading-[1.3em] mt-2 sm:mb-6 dark:text-slate-400">
             {blog.blogDescription}
           </p>
-          <img src={blog.blogImg} className=" w-full max-h-[75vh] " alt="" />
+          <img src={blog.blogImg} className=" w-full max-h-[85vh] " alt="" />
 
           <div
             id="dangerouslySetInnerHTML"
@@ -49,9 +49,9 @@ function Singleblog() {
               to={`?id=${_id}`}
               spy="true"
               smooth="true"
-              onClick={()=>{
-                setid(_id)
-                window.scrollTo(0,0)
+              onClick={() => {
+                setid(_id);
+                window.scrollTo(0, 0);
               }}
             >
               <img className="" src={blogImg} alt="" />

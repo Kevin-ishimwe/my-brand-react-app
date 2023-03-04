@@ -21,12 +21,16 @@ import swagger from "../assets/swagger.png";
 import jest from "../assets/jest.png";
 import git from "../assets/git.png";
 import Footer from "./footer";
+import { RiDownloadCloudFill } from "react-icons/ri";
 import BlogsContext from "./getblogs";
 
 function Landing() {
+  const [err, seterr] = useState("");
+  const [message, setmessage] = useState("");
+  const popup = useRef();
   const [blogs, setblogs] = useState([]);
   const allblogs = useContext(BlogsContext);
-  
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -80,11 +84,99 @@ function Landing() {
     };
   }, []);
   useEffect(() => {
-    setblogs(allblogs)
+    setblogs(allblogs);
+    console.log(allblogs);
   }, [allblogs]);
+  const handleMessage = async (e) => {
+    e.preventDefault();
+    document.getElementById("wait").style.display = "grid";
+    e.target.lastChild.children[1].textContent = ` LOADING...`;
+
+    await fetch("https://fair-teal-chinchilla-tam.cyclic.app/addmessages", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: e.target.name.value,
+        email: e.target.email.value,
+        content: e.target.content.value,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        popup.current.style.display = "grid";
+        document.getElementById("wait").style.display = "none";
+        e.target.lastChild.children[1].textContent = "SEND";
+        e.target.reset();
+        if (data.status === "success") {
+          setmessage(data.message);
+          setTimeout(() => {
+            popup.current.style.display = "none";
+            setmessage("");
+          }, 2000);
+        } else {
+          seterr(data.message);
+          setTimeout(() => {
+            popup.current.style.display = "none";
+            seterr("");
+          }, 2000);
+        }
+        console.log(data);
+      });
+  };
 
   return (
     <div id="landingnone">
+      <div className="hidden fixed z-10" ref={popup}>
+        {err.length > 0 ? (
+          <div
+            className="bg-red-500 rounded-lg py-5 px-6 mb-3 text-base text-white inline-flex items-center w-fit fixed top-20 right-5"
+            role="alert"
+          >
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="times-circle"
+              className="w-4 h-4 mr-2 fill-current"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+              ></path>
+            </svg>
+            {err}
+          </div>
+        ) : (
+          <div
+            className="bg-green-400 rounded-lg p-5 px-6 mb-3 text-base text-green-900 inline-flex items-center w-fit fixed top-20 right-5"
+            role="alert"
+          >
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="check-circle"
+              className="w-4 h-4 mr-2 fill-current"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+              ></path>
+            </svg>
+            {message}
+          </div>
+        )}
+      </div>
+
       <div className="landing dark:bg-[#040b1e]">
         <div className="dark:from-[#040b1e] dark:to-[#040b1e]  relative min-h-full lg:absolute bg-gradient-to-r from-[#B4862A] to-[#ECBE3A]   w-full pb-5  ">
           <div className=" flex flex-col-reverse md:dark:flex-col-reverse md:dark:flex sm:-mt-20 sm:w-full md:pt-20 md:pb-11  md:mt-0 md:mb-11  lg:mb-0 lg:mt-36  ">
@@ -191,13 +283,16 @@ function Landing() {
               challenges, both professionally and personally. I believe that
               continuous learning and growth are key to success in this field.
             </p>
-            <button
+            <a
               id="skillz"
+              href="../assets/myResumeKevin.pdf"
               data-aos="fade-up"
-              className="lg:dark:ml-8  mt-10 rounded-full  dark:bg-yellow-400  mx-auto dark:text-black ease-out font-semibold duration-300 bg-[#00034a] text-1xl mb-5 max-w-fit  p-2 mx-a text-white sm:ml-4 lg:ml-28 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
+              className=" flex lg:dark:ml-8  mt-10 rounded-full  dark:bg-yellow-400  mx-auto dark:text-black ease-out font-semibold duration-300 bg-[#00034a] text-1xl mb-5 max-w-fit  p-2 mx-a text-white sm:ml-4 lg:ml-28 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
+              download
             >
+              <RiDownloadCloudFill className="text-2xl mr-2" />
               DOWNLOAD CV
-            </button>
+            </a>
           </div>
         </div>
         <div
@@ -314,7 +409,7 @@ function Landing() {
                           {blogDescription}
                         </p>
                         <a
-                          href={`/singleblog?id=${_id}`}
+                          href={`/my-brand-react-app/singleblog?id=${_id}`}
                           className=" decoration-none w-fit  flex px-2 py-1.5 dark:bg-[#182449] bg-yellow-500  mt-2 dark:text-yellow-400 text-black font-semibold text-sm  uppercase  shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                         >
                           READ MORE
@@ -345,9 +440,7 @@ function Landing() {
             <div className="flex w-11/12 pb-4 mx-auto shadow-[2px 3px 20px #8080807a] rounded-2xl dark:bg-slate-900 mt-20 lg:w-5/12 md:mt-0 min-h-[50vh]">
               <form
                 className="flex flex-col w-full px-5"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                }}
+                onSubmit={handleMessage}
               >
                 <h1 className=" text-center  text-6xl font-semibold font-sans mb-4 text-[#040b1e] dark:text-yellow-100">
                   get in touch
@@ -394,15 +487,22 @@ function Landing() {
                   required
                   className=" px-3 py-2 dark:text-white  dark:bg-slate-800 mt-3 min-h-[30vh] bg-white border shadow-sm border-slate-300 placeholder:italic placeholder:text-slate-400 w-full text-xl focus:outline-none focus:border-yellow-200 block focus:ring-yellow-200 rounded-md sm:text-sm focus:ring-1"
                   type="text"
+                  name="content"
                   placeholder="type your message here...."
                 />
-
-                <button
-                  type="submit"
-                  className="inline-block mt-3  py-2.5 bg-blue-600 dark:bg-yellow-400 text-white dark:text-black dark:active:bg-yellow-200  font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg  transition duration-150 ease-in-out"
-                >
-                  SEND
-                </button>
+                <div className="flex justify-center ">
+                  <div
+                    id="wait"
+                    className=" hidden h-5 w-5 mt-4 absolute  mr-24 animate-spin rounded-full border-2 border-solid border-white border-r-transparent  motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                    role="status"
+                  />
+                  <button
+                    type="submit"
+                    className=" mt-2 w-full  py-2.5 bg-blue-600 dark:bg-yellow-400 text-white dark:text-black dark:active:bg-yellow-200  font-semibold text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg  transition duration-150 ease-in-out"
+                  >
+                    SEND
+                  </button>
+                </div>
               </form>
             </div>
           </div>
