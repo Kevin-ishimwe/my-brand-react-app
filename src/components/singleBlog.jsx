@@ -23,7 +23,7 @@ function Singleblog() {
   return (
     <div className="dark:bg-[#040b1e] min-h-[100vh] w-full">
       <Navbar />
-      <div className="flex flex-wrap w-full md:w-10/12 sm:ml-7 min-h-full md:mx-auto ">
+      <div className="flex flex-wrap w-full md:w-10/12 min-h-full md:mx-auto ">
         <div className=" mx-auto pt-28">
           <h1 className="text-4xl mx-2 sm:mx-0 sm:text-[xxx-large] mb-3 font-semibold text-[#0e0909] leading-[1em] first-of-type:first-letter:uppercase dark:text-slate-400">
             {blog.blogTitle}
@@ -31,7 +31,7 @@ function Singleblog() {
           <p className="text-[large] mx-2 sm:mx-0  sm:text-xl  text-[#353c4b] font-semibold leading-[1.3em] mt-2 sm:mb-6 dark:text-slate-400">
             {blog.blogDescription}
           </p>
-          <img src={blog.blogImg} className=" w-full max-h-[85vh] " alt="" />
+          <img src={blog.blogImg} className=" w-full max-h-[85vh]" alt="" />
 
           <div
             id="dangerouslySetInnerHTML"

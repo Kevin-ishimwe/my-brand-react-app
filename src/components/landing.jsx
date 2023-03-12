@@ -15,6 +15,7 @@ import mui from "../assets/mui.png";
 import node from "../assets/node.png";
 import mongo from "../assets/mongo.png";
 import fire from "../assets/fire.png";
+import postgresql from "../assets/postgresql.png";
 import jwt from "../assets/jwt.png";
 import figma from "../assets/figma.png";
 import swagger from "../assets/swagger.png";
@@ -23,6 +24,7 @@ import git from "../assets/git.png";
 import Footer from "./footer";
 import { RiDownloadCloudFill } from "react-icons/ri";
 import BlogsContext from "./getblogs";
+import { Link } from "react-router-dom";
 
 function Landing() {
   const [err, seterr] = useState("");
@@ -48,6 +50,7 @@ function Landing() {
     { img: mongo, name: "MongoDB" },
     { img: jwt, name: "JWT" },
     { img: fire, name: "firebase" },
+    { img: postgresql, name: "postgresql" },
   ];
   const other_skills = [
     { img: git, name: "git/github" },
@@ -126,6 +129,9 @@ function Landing() {
         console.log(data);
       });
   };
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
 
   return (
     <div id="landingnone">
@@ -242,7 +248,7 @@ function Landing() {
               data-aos="fade-zoom-in"
               data-aos-duration="2000"
               data-aos-once={true}
-              className="dark:rounded-full lg:dark:rounded-none md:dark:bg-inherit md:dark:rounded-none lg:dark:bg-yellow-400 lg:dark:w-6/12 dark:bg-yellow-400  relative  rounded-full  mt-20 sm:mt-32 md:mt-0 bg-white h-2/3 w-8/12 mx-auto sm:rounded-none sm:bg-inherit sm:h-2/3 md:w-6/12 md:absolute md:top-0 md:-right-0  lg:fixed top-0 lg:-right-7 md:h-full z-10"
+              className="dark:rounded-full lg:dark:rounded-none md:dark:bg-inherit md:dark:rounded-none lg:dark:bg-yellow-400 lg:dark:w-6/12 dark:bg-yellow-400  relative  rounded-full   sm:mt-20 md:mt-0 bg-white h-2/3 w-8/12 mx-auto sm:rounded-none sm:bg-inherit sm:h-2/3 md:w-6/12 md:absolute md:top-0 md:-right-0  lg:fixed top-0 lg:-right-7 md:h-full z-10 lg:w-[max-content]"
               alt="my_AI_generated_image"
               src={herobg}
               ref={hero}
@@ -285,10 +291,12 @@ function Landing() {
             </p>
             <a
               id="skillz"
-              href="../assets/myResumeKevin.pdf"
+              href="https://firebasestorage.googleapis.com/v0/b/my-brand-kevin.appspot.com/o/myResume%2FmyResumeKevin.pdf?alt=media&token=35996097-5f9f-4ef4-923f-9e42c1c3922f"
               data-aos="fade-up"
               className=" flex lg:dark:ml-8  mt-10 rounded-full  dark:bg-yellow-400  mx-auto dark:text-black ease-out font-semibold duration-300 bg-[#00034a] text-1xl mb-5 max-w-fit  p-2 mx-a text-white sm:ml-4 lg:ml-28 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
-              download
+              download="resume_KEVIN_ISHIMWE"
+              target="_blank"
+              rel="noreferrer"
             >
               <RiDownloadCloudFill className="text-2xl mr-2" />
               DOWNLOAD CV
@@ -391,7 +399,7 @@ function Landing() {
                 return (
                   <div className="flex justify-center mx-3 scale-95" key={_id}>
                     <div className="rounded-lg shadow-2xl bg-white dark:bg-slate-900  max-w-sm min-w-[25em] ">
-                      <a href={`/my-brand-react-app/singleblog?id=${_id}`}>
+                      <Link to={`/singleblog?id=${_id}`}>
                         <img
                           data-aos-anchor="#parent"
                           data-aos="flip-right"
@@ -400,7 +408,7 @@ function Landing() {
                           src={blogImg}
                           alt=""
                         />
-                      </a>
+                      </Link>
                       <div className="p-6">
                         <h5 className="text-gray-900 text-xl dark:text-yellow-300 font-semibold ">
                           {blogTitle}
@@ -408,8 +416,8 @@ function Landing() {
                         <p className="text-gray-700 dark:text-gray-500 text-base h-24 overflow-hidden text-ellipsis whitespace-pre-wrap">
                           {blogDescription}
                         </p>
-                        <a
-                          href={`/my-brand-react-app/singleblog?id=${_id}`}
+                        <Link
+                          to={`/singleblog?id=${_id}`}
                           className=" decoration-none w-fit  flex px-2 py-1.5 dark:bg-[#182449] bg-yellow-500  mt-2 dark:text-yellow-400 text-black font-semibold text-sm  uppercase  shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                         >
                           READ MORE
@@ -423,7 +431,7 @@ function Landing() {
                           >
                             <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
                           </svg>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -431,7 +439,10 @@ function Landing() {
               })}
             </div>
           }
-          <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2 mt-12   ">
+          <p
+            id="myWork"
+            className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2 mt-12   "
+          >
             PROJECTS
           </p>
           <SliderComponent />

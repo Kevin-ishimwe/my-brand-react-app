@@ -5,7 +5,7 @@ import { RxSun } from "react-icons/rx";
 import { FaRegTimesCircle } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { NavLink,Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
   let last = window.scrollY;
@@ -13,14 +13,16 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll);
   }, []);
   const handleScroll = () => {
-    const navbar = document.getElementById("navbar");
-    if (Math.ceil(last) > Math.ceil(window.scrollY)) {
-      navbar.style = "clip-path: none";
-      navbar.style.top = "0";
-    } else {
-      navbar.style = "clip-path: polygon(100% 0, 0 0, 0 0, 100% 0);";
+    if (window.visualViewport.width > 800) {
+      const navbar = document.getElementById("navbar");
+      if (Math.ceil(last) > Math.ceil(window.scrollY)) {
+        navbar.style = "clip-path: none";
+        navbar.style.top = "0";
+      } else {
+        navbar.style = "clip-path: polygon(100% 0, 0 0, 0 0, 100% 0);";
+      }
+      last = window.scrollY;
     }
-    last = window.scrollY;
   };
   const [theme, settheme] = useState("dark");
   useEffect(() => {
@@ -54,7 +56,7 @@ function Navbar() {
         <h1 className="logo text-5xl scale-75 sm:scale-85 md:scale-95 ">IK</h1>
         {theme === "light" ? (
           <MdDarkMode
-            className="text-white lg:ml-60 text-4xl mt-2 cursor-pointer rounded-full border-solid border-gray-600 bg-gray-700 border-2"
+            className="text-white lg:ml-60 text-3xl mt-2 cursor-pointer rounded-full border-solid border-gray-100 bg-yellow-500 border-2"
             onClick={handleTheme}
           />
         ) : (
@@ -79,28 +81,34 @@ function Navbar() {
           </li>
           <li id="menu_item" className="pl-2 mt-1">
             <Link
-              href="/"
-              className="    z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]"
+              to="/"
+              className="z-10  text-2xl font-medium md:dark:text-white md:text-[#black]"
             >
               HOME
             </Link>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
-            <NavLink className="    z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]">
+            <a
+              href="/my-brand-react-app#insidernav"
+              className="    z-10  text-2xl font-medium md:dark:text-white md:text-[#black]"
+            >
               ABOUT ME
-            </NavLink>
+            </a>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
-            <NavLink className="   z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]">
+            <a
+              href="/my-brand-react-app#myWork"
+              className="   z-10  text-2xl font-medium md:dark:text-white md:text-[#black]"
+            >
               MY WORK
-            </NavLink>
+            </a>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
             <NavLink
               to={"/allblogs"}
               spy="true"
               smooth="true"
-              className="    z-10  text-2xl font-medium md:dark:text-yellow-500 md:text-[#black]"
+              className="    z-10  text-2xl font-medium md:dark:text-white md:text-[#black]"
             >
               BLOGS
             </NavLink>

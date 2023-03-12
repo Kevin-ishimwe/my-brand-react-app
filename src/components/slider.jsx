@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import AIapp from "../assets/projects/AIapp.JPG";
 import AGCera from "../assets/projects/AGCera.JPG";
 import musicapp from "../assets/projects/musicapp.JPG";
+import Capture from "../assets/projects/Capture.JPG";
+import reddy from "../assets/projects/reddy.png";
 
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
@@ -74,8 +76,8 @@ function SliderComponent() {
       demo: "https://github.com/Kevin-ishimwe/MusicWebApp",
     },
     {
-      img: AGCera,
-      name: "health website",
+      img: reddy,
+      name: "portfolio website",
       demo: "https://agceramoz.com",
     },
     {
@@ -85,13 +87,13 @@ function SliderComponent() {
       demo: "https://github.com/Kevin-ishimwe/blog-website",
     },
     {
-      img: AGCera,
+      img: Capture,
       name: "health website",
       demo: "https://agceramoz.com",
     },
   ];
   return (
-    <div className="dark:bg-[#040b1e]">
+    <div  className="dark:bg-[#040b1e]">
       <div style={{ minHeight: "50vw" }}>
         <Slider {...settings}>
           {slides.map(({ img, name, demo }) => {

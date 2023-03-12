@@ -10,9 +10,9 @@ import AddBlog from "./components/admin/AddBlog";
 import ManageBlogs from "./components/admin/manageBlog";
 import { BlogsProvider } from "./components/getblogs";
 import { AuthProvider } from "./components/authContext";
+import Queries from "./components/admin/queries";
 import ProtectedRoute from "./protectedRoutes";
 function App() {
-  console.log(<ProtectedRoute />);
   return (
     <>
       <Router basename="/my-brand-react-app">
@@ -56,7 +56,6 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
             <Route
               exact
               path="/addblog"
@@ -73,6 +72,17 @@ function App() {
                 <ProtectedRoute>
                   <BlogsProvider>
                     <ManageBlogs />
+                  </BlogsProvider>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              exact
+              path="/Queries"
+              element={
+                <ProtectedRoute>
+                  <BlogsProvider>
+                    <Queries />
                   </BlogsProvider>
                 </ProtectedRoute>
               }
