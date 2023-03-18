@@ -5,6 +5,7 @@ import { RxSun } from "react-icons/rx";
 import { FaRegTimesCircle } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
   let last = window.scrollY;
@@ -12,25 +13,37 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll);
   }, []);
   const handleScroll = () => {
-    const navbar = document.getElementById("navbar");
-    if (Math.ceil(last) > Math.ceil(window.scrollY)) {
-      navbar.style = "clip-path: none";
-      navbar.style.top = "0";
-    } else {
-      navbar.style = "clip-path: polygon(100% 0, 0 0, 0 0, 100% 0);";
+    if (window.visualViewport.width > 800) {
+      const navbar = document.getElementById("navbar");
+      if (Math.ceil(last) > Math.ceil(window.scrollY)) {
+        navbar.style = "clip-path: none";
+        navbar.style.top = "0";
+      } else {
+        navbar.style = "clip-path: polygon(100% 0, 0 0, 0 0, 100% 0);";
+      }
+      last = window.scrollY;
     }
-    last = window.scrollY;
   };
-  const [theme, settheme] = useState("light");
+  const [theme, settheme] = useState("dark");
+  useEffect(() => {
+    if (localStorage.getItem("theme") === "light") {
+      settheme("light");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
   const handleTheme = () => {
     if (theme === "light") {
       settheme("dark");
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+
       AOS.refreshHard("my-element");
       AOS.init();
     } else {
       settheme("light");
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
   };
 
@@ -43,7 +56,7 @@ function Navbar() {
         <h1 className="logo text-5xl scale-75 sm:scale-85 md:scale-95 ">IK</h1>
         {theme === "light" ? (
           <MdDarkMode
-            className="text-white lg:ml-60 text-4xl mt-2 cursor-pointer rounded-full border-solid border-gray-600 bg-gray-700 border-2"
+            className="text-white lg:ml-60 text-3xl mt-2 cursor-pointer rounded-full border-solid border-gray-100 bg-yellow-500 border-2"
             onClick={handleTheme}
           />
         ) : (
@@ -67,32 +80,43 @@ function Navbar() {
             />
           </li>
           <li id="menu_item" className="pl-2 mt-1">
-            <a
-              href="/my-brand-react-app/"
-              className=" dark:text-[#000223]   z-10  text-2xl font-medium dark:text-yellow-500 md:text-[#black]"
+            <Link
+              to="/"
+              className="z-10  text-2xl font-medium md:dark:text-white md:text-[#black]"
             >
               HOME
-            </a>
+            </Link>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
-            <a className=" dark:text-[#000223]   z-10  text-2xl font-medium dark:text-yellow-500 md:text-[#black]">
+            <a
+              href="/my-brand-react-app#insidernav"
+              className="    z-10  text-2xl font-medium md:dark:text-white md:text-[#black]"
+            >
               ABOUT ME
             </a>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
-            <a className=" dark:text-[#000223]   z-10  text-2xl font-medium dark:text-yellow-500 md:text-[#black]">
+            <a
+              href="/my-brand-react-app#myWork"
+              className="   z-10  text-2xl font-medium md:dark:text-white md:text-[#black]"
+            >
               MY WORK
             </a>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
-            <a className=" dark:text-[#000223]   z-10  text-2xl font-medium dark:text-yellow-500 md:text-[#black]">
+            <NavLink
+              to={"/allblogs"}
+              spy="true"
+              smooth="true"
+              className="    z-10  text-2xl font-medium md:dark:text-white md:text-[#black]"
+            >
               BLOGS
-            </a>
+            </NavLink>
           </li>
         </ul>
 
         <HiMenu
-          className=" text-4xl mt-3 mr-5 text-white md:hidden"
+          className=" text-4xl mt-3 mr-0 text-[#040b1e] dark:text-white md:hidden"
           onClick={() => {
             document.getElementById("hamburger").style =
               "clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);";

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none;
   scrollbar-color: rgb(12, 0, 19) rgb(206, 209, 0);
@@ -32,7 +33,7 @@ code {
   pointer-events: all;
 }
 .center #div_see {
-  margin: 9% 0%;
+  margin: 10% 0%;
   pointer-events: none;
 }
 .center .slick-center #div_see img {
@@ -42,28 +43,42 @@ code {
 .slick-slider {
   width: 100%;
   margin-top: 5%;
-  padding: 0% 0em;
+  padding: 0% 2em;
 }
 .slick-dots {
   position: relative;
   right: 0vw;
   bottom: 0vh;
 }
+.slick-next {
+  position: absolute;
+  margin-right: 3%;
+}
+.slick-prev {
+  position: absolute;
+  margin-left: 2%;
+  z-index: 10;
+}
 #div_see:hover #div_see_text {
   transition: 0.5s ease-in-out;
   top: 0%;
-  padding: 50% 5%;
-  background: linear-gradient(0deg, rgb(0, 0, 0, 0.7), rgba(56, 56, 56, 0.289));
+  padding: 50% 0%;
+  background: linear-gradient(0deg, rgb(0, 0, 0, 0.8), rgba(56, 56, 56, 0.389));
   width: 100%;
   height: 100%;
 }
 #dangerouslySetInnerHTML p {
-  font-size: larger;
-  line-height: 1.55;
-  margin: 1% 0%;
-  font-family: Roboto Slab, Times New Roman, Times, serif, Apple Color Emoji,
-    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  color: #1e1e1e;
+  text-transform: none;
+  font-family: Finlandica, serif;
+  font-feature-settings: normal;
+  font-style: normal;
+  letter-spacing: 0.005684210673758858em;
+  line-break: auto;
+  line-height: 1.4736842105263157em;
+  font-size: 19px;
+  font-weight: 400;
+  overflow-wrap: normal;
+  color: rgba(26, 26, 26, 1);
 }
 #dangerouslySetInnerHTML li {
   font-size: large;
@@ -71,12 +86,26 @@ code {
   margin: 2% 0%;
   color: #261d1d;
 }
+.dark #dangerouslySetInnerHTML li {
+  color: rgb(223, 223, 223);
+}
+#dangerouslySetInnerHTML a {
+  color: rgb(0, 179, 255);
+}
 #dangerouslySetInnerHTML iframe {
   width: 100%;
   min-height: 70vh;
 }
+.dark #dangerouslySetInnerHTML a {
+  color: rgba(90, 184, 255, 0.809);
+}
 .dark #dangerouslySetInnerHTML p {
   color: rgb(145, 166, 175);
+}
+.ql-syntax {
+  padding: 2% 0%;
+  background-color: black;
+  color: yellow;
 }
 @media screen and (max-width: 768px) {
   #hamburger {
@@ -88,5 +117,17 @@ code {
   #menu_item {
     margin: 1% 2%;
     padding: 3% 0%;
+  }
+  .slick-slider {
+    padding: 1%;
+  }
+  .slick-next {
+    position: absolute;
+    margin-right: 5%;
+  }
+  .slick-prev {
+    position: absolute;
+    margin-left: 5%;
+    z-index: 10;
   }
 }
