@@ -1,28 +1,60 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { FiMenu } from "react-icons/fi";
 
 function Sidenav() {
+  const [sidebar, setsidebar] = useState(false);
+
+  const item = useRef();
+  useEffect(() => {
+    if (window.visualViewport.width < 768) {
+      toggleSidebar(sidebar);
+    }
+  }, []);
+  const toggleSidebar = () => {
+    if (sidebar === false) {
+      setsidebar(true);
+      document.querySelectorAll("#item").forEach((item) => {
+        item.style.display = "none";
+      });
+    } else {
+      setsidebar(false);
+
+      document.querySelectorAll("#item").forEach((item) => {
+        item.style.display = "flex";
+      });
+    }
+  };
+
   return (
     <div>
-      <div className="fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden"></div>
-      <div className="fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-gray-900 lg:translate-x-0 lg:static lg:inset-0 min-h-[100vh] pt-0 h-[100%]">
-        <div className="flex  justify-center -mt-6 items-center">
+      {sidebar === false && window.visualViewport.width < 768 ? (
+        <div className="fixed inset-0 z-20 transition-opacity bg-black opacity-50"></div>
+      ) : (
+        <div></div>
+      )}
+      <div className=" fixed inset-y-0 left-0 z-30 w-fit max-w-[15em] overflow-y-auto transition duration-500 transform bg-gray-900 lg:translate-x-0 lg:static lg:inset-0 min-h-[100vh] pt-0 h-[100%]">
+        <div className="flex  justify-center  items-center">
           <div className="">
+            <span className="flex mx-2 text-2xl font-semibold text-white m-3 justify-between">
+              <span id="item">ADMIN</span>
+              <FiMenu
+                className="text-3xl  text-white md:hidden"
+                onClick={toggleSidebar}
+              />
+            </span>
             <img
               src="https://firebasestorage.googleapis.com/v0/b/my-brand-kevin.appspot.com/o/images%2Fme_closeUp.jpg?alt=media&token=d7cb95f9-703e-48ac-aada-583fd9ee24d4"
               className="w-full mt-0 "
               alt="photoadmin"
+              id="item"
             />
-
-            <span className="mx-2 text-2xl font-semibold text-white ml-10">
-              ADMIN
-            </span>
           </div>
         </div>
 
-        <nav className="mt-10">
+        <nav className="mt-10 ">
           <NavLink
-            className="flex items-center px-6 py-2 mt-4 text-gray-100 active:bg-blue-300 bg-opacity-25"
+            className="flex items-center px-2 md:px-6 py-2 mt-4 text-gray-100 active:bg-blue-300 bg-opacity-25"
             to="/Dashboard"
           >
             <svg
@@ -46,10 +78,12 @@ function Sidenav() {
               />
             </svg>
 
-            <span className="mx-3">Dashboard</span>
+            <span className="mx-3" id="item">
+              Dashboard
+            </span>
           </NavLink>
           <NavLink
-            className="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+            className="flex items-center px-2 md:px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
             to="/addblog"
           >
             <svg
@@ -67,10 +101,12 @@ function Sidenav() {
               />
             </svg>
 
-            <span className="mx-3">ADD blog</span>
+            <span className="mx-3" id="item">
+              ADD blog
+            </span>
           </NavLink>
           <NavLink
-            className="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+            className="flex items-center px-2 md:px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
             to="/manageBlogs"
           >
             <svg
@@ -88,11 +124,13 @@ function Sidenav() {
               />
             </svg>
 
-            <span className="mx-3">blog management</span>
+            <span className="mx-3" id="item">
+              blog management
+            </span>
           </NavLink>
 
           <NavLink
-            className="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+            className="flex items-center px-2 md:px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
             to="/Queries"
           >
             <svg
@@ -110,7 +148,9 @@ function Sidenav() {
               />
             </svg>
 
-            <span className="mx-3">Queries</span>
+            <span className="mx-3" id="item">
+              Queries
+            </span>
           </NavLink>
 
           {/* <div

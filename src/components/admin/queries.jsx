@@ -26,7 +26,7 @@ function Queries() {
   return (
     <div className="flex">
       <Sidenav />
-      <div className="ml-5 w-full px-5">
+      <div className="ml-[2em] md:ml-5 w-full px-5">
         <h1 className="text-4xl font-semibold text-[#068dfb] drop-shadow-lg mb-10 text-center">
           {" "}
           Queries...

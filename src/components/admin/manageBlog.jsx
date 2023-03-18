@@ -156,7 +156,7 @@ function ManageBlogs() {
           </div>
         )}
       </div>
-      <div className="flex  flex-wrap mt-5">
+      <div className="flex  flex-wrap mt-5 justify-center md:justify-start ml-[2em] md:ml-2">
         {blogs.map(({ blogTitle, _id, blogDescription, blogImg }) => {
           return (
             <div className="  mx-3  min-w-[5em] flex-grow-0" key={_id}>

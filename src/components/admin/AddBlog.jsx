@@ -11,7 +11,7 @@ function AddBlog() {
   const [popup, setpopup] = useState("");
   const [value, setvalue] = useState(``);
   const popstatus = useRef();
-  const sendBlog = async(e) => {
+  const sendBlog = async (e) => {
     e.preventDefault();
     const form = document.forms.newblog;
     const body = new FormData();
@@ -174,7 +174,7 @@ function AddBlog() {
     <div className="flex ">
       <Sidenav />
       <form
-        className=" ml-10 mt-2 w-full h-full pb-9"
+        className=" ml-[3.5em] md:ml-10 mt-2 w-full h-full pb-9"
         name="newblog"
         onSubmit={sendBlog}
       >
@@ -182,7 +182,7 @@ function AddBlog() {
         <div className="relative mb-3 xl:w-96">
           <input
             type="text"
-            className="peer m-0 h-[48px] w-full rounded border border-solid border-blue-300 bg-white bg-clip-padding py-1 px-3 text-xl font-semibold leading-3 text-neutral-700 ease-in-out placeholder:text-transparent  focus:bg-white focus:pt-[.7rem] focus:pb-[0.925rem] focus:text-neutral-900 focus:shadow-te-primary focus:outline-none dark:bg-neutral-800 dark:text-neutral-200 [&:not(:placeholder-shown)]:pt-[1.625rem] [&:not(:placeholder-shown)]:pb-[0.625rem]"
+            className="peer m-0 h-[48px] rounded border border-solid border-blue-300 bg-white bg-clip-padding py-1 px-3 text-xl font-semibold leading-3 text-neutral-700 ease-in-out placeholder:text-transparent  focus:bg-white focus:pt-[.7rem] focus:pb-[0.925rem] focus:text-neutral-900 focus:shadow-te-primary focus:outline-none dark:bg-neutral-800 dark:text-neutral-200 [&:not(:placeholder-shown)]:pt-[1.625rem] [&:not(:placeholder-shown)]:pb-[0.625rem]"
             id="floatingInput"
             placeholder="Blog title"
           />
