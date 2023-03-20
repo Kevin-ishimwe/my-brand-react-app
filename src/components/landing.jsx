@@ -129,9 +129,9 @@ function Landing() {
         console.log(data);
       });
   };
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo(0, 0);
-  },[])
+  }, []);
 
   return (
     <div id="landingnone">
@@ -228,7 +228,7 @@ function Landing() {
                       document.getElementById("ContactPage").scrollIntoView();
                     }
                   }}
-                  className="sm:dark:ml-6  dark:bg-[#B4862A] dark:text-black font-semibold ease-out duration-300 bg-[#00034a] text-2xl mt-5  p-2 mx-a text-white sm:ml-4 lg:ml-20 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
+                  className="sm:dark:ml-6  dark:bg-yellow-600 dark:text-[#040b1e] font-semibold ease-out duration-300 bg-[#00034a] text-2xl mt-5  p-2 mx-a text-white sm:ml-4 lg:ml-20 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
                 >
                   CONTACT ME
                 </button>
