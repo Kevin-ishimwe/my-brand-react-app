@@ -46,12 +46,13 @@ function Navbar() {
       localStorage.setItem("theme", "light");
     }
   };
+  const linkStyle = "z-10  text-2xl font-medium md:dark:text-white [text-transform:lowercase] ";
 
   return (
     <div>
       <nav
         id="navbar"
-        className="pr-5 md:pr-0 ease-in duration-500 fixed top-0  dark:ml-0  w-full justify-between  flex z-20  lg:pl-16 lg:dark:pl-8"
+        className="pr-5 md:pr-0 ease-in duration-500 fixed top-0  dark:ml-0  w-full justify-between  flex z-20  lg:pl-16 lg:dark:pl-8 "
       >
         <h1 className="logo text-5xl scale-75 sm:scale-85 md:scale-95 ">IK</h1>
         {theme === "light" ? (
@@ -80,26 +81,17 @@ function Navbar() {
             />
           </li>
           <li id="menu_item" className="pl-2 mt-1">
-            <Link
-              to="/"
-              className="z-10  text-2xl font-medium md:dark:text-white md:text-[#black]"
-            >
+            <Link to="/" className={linkStyle}>
               HOME
             </Link>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
-            <a
-              href="/my-brand-react-app#insidernav"
-              className="    z-10  text-2xl font-medium md:dark:text-white md:text-[#black]"
-            >
+            <a href="/my-brand-react-app#insidernav" className={linkStyle}>
               ABOUT ME
             </a>
           </li>
           <li id="menu_item" className="pl-1 pt-px mt-1 ml-5">
-            <a
-              href="/my-brand-react-app#myWork"
-              className="   z-10  text-2xl font-medium md:dark:text-white md:text-[#black]"
-            >
+            <a href="/my-brand-react-app#myWork" className={linkStyle}>
               MY WORK
             </a>
           </li>
@@ -108,7 +100,7 @@ function Navbar() {
               to={"/allblogs"}
               spy="true"
               smooth="true"
-              className="    z-10  text-2xl font-medium md:dark:text-white md:text-[#black]"
+              className={linkStyle}
             >
               BLOGS
             </NavLink>

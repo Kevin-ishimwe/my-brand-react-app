@@ -18,6 +18,7 @@ function App() {
       <Router basename="/my-brand-react-app">
         <AuthProvider>
           <Routes>
+            <Route path="*" element={<Landing />} />
             <Route
               exact
               path="/"
@@ -61,7 +62,7 @@ function App() {
               path="/addblog"
               element={
                 <ProtectedRoute>
-                  <AddBlog />{" "}
+                  <AddBlog />
                 </ProtectedRoute>
               }
             />

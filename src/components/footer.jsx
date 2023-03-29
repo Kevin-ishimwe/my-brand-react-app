@@ -207,25 +207,40 @@ function Footer() {
 
           <ul className="  list-none mb-0  flex  w-fit flex-wrap mx-auto">
             <li>
-              <a href="/" className="text-white text-xl mx-2  ">
+              <Link to={"/"} className="text-white text-xl mx-2  ">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#About me" className="text-white text-xl mx-2 ">
+              <a
+                href="/my-brand-react-app#insidernav"
+                spy="true"
+                smooth="true"
+                className="text-white text-xl mx-2 "
+              >
                 About me
               </a>
             </li>
             <li>
-              <a href="my work" className="text-white text-xl mx-2 ">
+              <a
+                href="/my-brand-react-app#myWork"
+                spy="true"
+                smooth="true"
+                className="text-white text-xl mx-2 "
+              >
                 My work
               </a>
             </li>
 
             <li>
-              <a href="blogs" className="text-white text-xl mx-2 ">
+              <Link
+                to={"/allblogs"}
+                spy="true"
+                smooth="true"
+                className="text-white text-xl mx-2 "
+              >
                 Blogs
-              </a>
+              </Link>
             </li>
 
             <li>
@@ -237,7 +252,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="text-center p-4 bg-[#15152b]">
+      <div className="text-center p-4 bg-[#0c0e2bbd]">
         Copyright © 2023 Ishimwe kevin. All rights reserved.
       </div>
     </footer>

@@ -239,7 +239,7 @@ function Landing() {
                   LEARN MORE
                 </a>
               </div>
-              <a href="#insidernav">
+              <a href="#insidernav" className="grid justify-center md:block">
                 <HiOutlineArrowNarrowDown className=" animate-bounce dark:text-yellow-300 dark:ml-4 ml-16 text-3xl" />
               </a>
             </div>
@@ -259,7 +259,7 @@ function Landing() {
 
       <div
         id="insidernav"
-        className="dark:bg-[#040b1e] relative lg:absolute top-full  md:pt-32 w-full min-h-full  z-5"
+        className="dark:bg-[#040b1e] relative lg:absolute top-full  md:pt-24 w-full min-h-full  z-5"
       >
         <div
           data-aos="fade-up"
@@ -267,8 +267,12 @@ function Landing() {
           data-aos-duration="1000"
           ref={about}
         >
-          <p className="lg:dark:ml-8 sm:ml-6  dark:text-yellow-300 text-4xl text-[#000223] font-semibold text-center md:text-left  mb-2  lg:ml-20 pt-10">
-            ABOUT ME
+          <p className="lg:dark:ml-8 sm:ml-6  dark:text-yellow-300 text-4xl text-[#000223] font-semibold text-center md:text-left  mb-5  lg:ml-20 pt-10 ">
+            AB
+            <span className="border-b-4 dark:border-yellow-400 border-[#000223] pr-2">
+              OUT
+            </span>
+            ME
           </p>
           <div className=" flex flex-col justify-center ">
             <p className="lg:dark:ml-8 w-11/12 text-center mx-auto  dark:text-[#aaaa8d] dark:lg:w-5/12 md:text-left lg:w-5/12 lg:ml-20 text-lg text-gray-800">
@@ -306,9 +310,9 @@ function Landing() {
         <div
           id="anchor_p"
           data-aos="fade-down"
-          className="dark:bg-[#040b1e] relative lg:w-6/12 lg:mt-96 lg:pt-72 lg:pb-32  lg:float-right "
+          className="pt-12 dark:bg-[#040b1e] relative lg:w-6/12 lg:mt-96 lg:pt-72 lg:pb-32  lg:float-right "
         >
-          <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-yellow-300 text-5xl text-[#000223] font-semibold  mb-6  lg:ml-28 lg:mt-9 ">
+          <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-yellow-300 text-4xl text-[#000223] font-semibold  mb-6  lg:ml-28 lg:mt-9 ">
             SKILLS
           </p>
           <p
@@ -504,7 +508,7 @@ function Landing() {
                 <div className="flex justify-center ">
                   <div
                     id="wait"
-                    className=" hidden h-5 w-5 mt-4 absolute  mr-24 animate-spin rounded-full border-2 border-solid border-white border-r-transparent  motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                    className=" hidden h-5 w-5 mt-4 absolute  mr-24 animate-spin rounded-full border-2 border-solid dark:border-black border-x-white border-r-transparent  motion-reduce:animate-[spin_1.5s_linear_infinite]"
                     role="status"
                   />
                   <button
