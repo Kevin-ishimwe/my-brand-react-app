@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AIapp from "../assets/projects/AIapp.JPG";
-import AGCera from "../assets/projects/AGCera.JPG";
 import musicapp from "../assets/projects/musicapp.JPG";
 import Capture from "../assets/projects/Capture.JPG";
 import reddy from "../assets/projects/reddy.png";
@@ -15,11 +14,7 @@ function SamplePrevArrow(props) {
       className={className}
       style={{
         ...style,
-        display: "block",
-        background: "grey",
-        scale: "1",
-        borderRadius: "50%",
-        padding: ".1% 0%",
+        scale: "2",
       }}
       onClick={onClick}
     />
@@ -78,13 +73,13 @@ function SliderComponent() {
     {
       img: reddy,
       name: "portfolio website",
-      demo: "https://agceramoz.com",
+      demo: "https://my-public-portfolio101.netlify.app/",
     },
     {
       img: musicapp,
       name: "AI app",
       desc: "openAI api app",
-      demo: "https://github.com/Kevin-ishimwe/blog-website",
+      demo: "https://github.com/Kevin-ishimwe/MusicWebApp",
     },
     {
       img: Capture,
@@ -93,7 +88,7 @@ function SliderComponent() {
     },
   ];
   return (
-    <div  className="dark:bg-[#040b1e]">
+    <div className="dark:bg-[#040b1e]">
       <div style={{ minHeight: "50vw" }}>
         <Slider {...settings}>
           {slides.map(({ img, name, demo }) => {
@@ -114,7 +109,12 @@ function SliderComponent() {
                 >
                   <h2 className="text-white text-2xl">{name}</h2>
                   <p className="text-white">details</p>
-                  <a href={demo} className="text-yellow-200">
+                  <a
+                    href={demo}
+                    target="_blank"
+                    className="text-yellow-200"
+                    rel="noreferrer"
+                  >
                     demo
                   </a>
                 </div>

@@ -188,14 +188,14 @@ function Landing() {
           <div className=" flex flex-col-reverse md:dark:flex-col-reverse md:dark:flex sm:-mt-20 sm:w-full md:pt-20 md:pb-11  md:mt-0 md:mb-11  lg:mb-0 lg:mt-36  ">
             <Navbar />
             <div className="sm:w-full md:w-9/12">
-              <p className="dark:text-yellow-400 sm:dark:ml-6  text-center md:text-left mt-4 text-4xl sm:ml-4 md:ml-8 md:text-4xl text-[#000223]   lg:ml-20">
+              <p className="dark:text-yellow-400 sm:dark:ml-12  text-center md:text-left mt-4 text-4xl sm:ml-4 md:ml-8 md:text-4xl text-[#000223]   lg:ml-20">
                 hey there,im
               </p>
               <p
                 data-aos="fade-down"
                 data-aos-duration="1000"
                 data-aos-delay="3200"
-                className="dark:text-yellow-400 sm:dark:ml-6  text-center md:text-left mt-4 text-4xl sm:ml-4 md:ml-8  md:text-5xl text-[#000223] font-semibold sm:mt-1 mb-2  lg:ml-20"
+                className="dark:text-yellow-400 sm:dark:ml-12  text-center md:text-left mt-4 text-4xl sm:ml-4 md:ml-8  md:text-5xl text-[#000223] font-semibold sm:mt-1 mb-2  lg:ml-20"
               >
                 ISHIMWE KEVIN
               </p>
@@ -204,7 +204,7 @@ function Landing() {
                 data-aos="fade-zoom-in"
                 data-aos-duration="1000"
                 data-aos-delay="200"
-                className="dark:text-yellow-400 sm:dark:ml-6  text-center md:text-left mt-1 text-2xl sm:ml-4 md:ml-8  md:text-3xl text-[#000223] font-semibold  lg:ml-20"
+                className="dark:text-yellow-400 sm:dark:ml-12  text-center md:text-left mt-1 text-2xl sm:ml-4 md:ml-8  md:text-3xl text-[#000223] font-semibold  lg:ml-20"
               >
                 FULLSTACK WEB DEVELOPER
               </p>
@@ -212,7 +212,7 @@ function Landing() {
                 data-aos="fade"
                 data-aos-duration="1000"
                 data-aos-delay="100"
-                className="dark:text-[#aaaa8d] sm:dark:ml-6 w-full text-center md:text-left md:dark:w-8/12 sm:ml-4 md:ml-8 sm:w-fit md:w-2/3 dark:lg:w-7/12 lg:w-9/12 lg:ml-20 mt-4 text-xl text-gray-800"
+                className="dark:text-[#aaaa8d] sm:dark:ml-12 w-full text-center md:text-left md:dark:w-8/12 sm:ml-4 md:ml-8 sm:w-fit md:w-2/3 dark:lg:w-7/12 lg:w-9/12 lg:ml-20 mt-4 text-xl text-gray-800"
               >
                 I strive to create visually appealing and functional websites
                 that deliver a great user experience. I am always looking for
@@ -228,7 +228,7 @@ function Landing() {
                       document.getElementById("ContactPage").scrollIntoView();
                     }
                   }}
-                  className="sm:dark:ml-6  dark:bg-yellow-600 dark:text-[#040b1e] font-semibold ease-out duration-300 bg-[#00034a] text-2xl mt-5  p-2 mx-a text-white sm:ml-4 lg:ml-20 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
+                  className="sm:dark:ml-12  dark:bg-yellow-600 dark:text-[#040b1e] font-semibold ease-out duration-300 bg-[#00034a] text-2xl mt-5  p-2 mx-a text-white sm:ml-4 lg:ml-20 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
                 >
                   CONTACT ME
                 </button>
@@ -248,7 +248,7 @@ function Landing() {
               data-aos="fade-zoom-in"
               data-aos-duration="2000"
               data-aos-once={true}
-              className="dark:rounded-full lg:dark:rounded-none md:dark:bg-inherit md:dark:rounded-none lg:dark:bg-yellow-400 lg:dark:w-6/12 dark:bg-yellow-400  relative  rounded-full   sm:mt-20 md:mt-0 bg-white h-2/3 w-8/12 mx-auto sm:rounded-none sm:bg-inherit sm:h-2/3 md:w-6/12 md:absolute md:top-0 md:-right-0  lg:fixed top-0 lg:-right-7 md:h-full z-10 lg:w-[max-content]"
+              className="dark:rounded-full lg:dark:rounded-none md:dark:bg-inherit md:dark:rounded-none lg:dark:bg-yellow-400 dark:bg-yellow-400  relative  rounded-full   sm:mt-20 md:mt-0 bg-white h-2/3 w-8/12 mx-auto sm:rounded-none sm:bg-inherit sm:h-2/3 md:w-6/12 md:absolute md:top-0 md:-right-0  lg:fixed top-0 lg:-right-7 md:h-[100vh] z-10 lg:w-[48vw]"
               alt="my_AI_generated_image"
               src={herobg}
               ref={hero}
@@ -275,7 +275,12 @@ function Landing() {
             ME
           </p>
           <div className=" flex flex-col justify-center ">
-            <p className="lg:dark:ml-8 w-11/12 text-center mx-auto  dark:text-[#aaaa8d] dark:lg:w-5/12 md:text-left lg:w-5/12 lg:ml-20 text-lg text-gray-800">
+            <p
+              data-aos="fade-up"
+              data-aos-anchor="#skill1"
+              data-aos-duration="500"
+              className="lg:dark:ml-8 w-11/12 text-center mx-auto  dark:text-[#aaaa8d] dark:lg:w-5/12 md:text-left lg:w-5/12 lg:ml-20 text-lg text-gray-800"
+            >
               With over 2 years of experience, I have honed my ability to stay
               focused and productive, even under heavy amounts of stress. My
               friends often come to me for help with their coding projects,
@@ -309,7 +314,6 @@ function Landing() {
         </div>
         <div
           id="anchor_p"
-          data-aos="fade-down"
           className="pt-12 dark:bg-[#040b1e] relative lg:w-6/12 lg:mt-96 lg:pt-72 lg:pb-32  lg:float-right "
         >
           <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-yellow-300 text-4xl text-[#000223] font-semibold  mb-6  lg:ml-28 lg:mt-9 ">
@@ -321,13 +325,7 @@ function Landing() {
           >
             FRONT-END
           </p>
-          <div
-            id="skill1"
-            data-aos-anchor="#anchor_p"
-            data-aos-duration="1000"
-            data-aos="fade-up"
-            className="  flex flex-wrap  justify-center  h-26"
-          >
+          <div className="  flex flex-wrap  justify-center  h-26">
             {front_endskills.map(({ img, name }) => {
               return (
                 <div
@@ -345,16 +343,14 @@ function Landing() {
           <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2  mt-8 ">
             BACKEND-END
           </p>
-          <div
-            data-aos="fade-up"
-            data-aos-anchor="#skill1"
-            data-aos-duration="900"
-            className="  flex flex-wrap  justify-center  h-26"
-          >
+          <div className="  flex flex-wrap  justify-center  h-26">
             {back_endskills.map(({ img, name }) => {
               return (
                 <div
                   key={name}
+                  data-aos="fade-up"
+                  data-aos-anchor="#skill1"
+                  data-aos-duration="500"
                   className=" bg-[#6b87d21c] pt-2 m-2 grid justify-center w-32 h-32 rounded-xl"
                 >
                   <img className="h-20" src={img} alt="javascript" />
@@ -393,10 +389,6 @@ function Landing() {
           {
             <div
               id="parent"
-              data-aos="fade-up"
-              data-aos-offset="0"
-              data-aos-anchor-placement="top-bottom"
-              data-aos-duration="1000"
               className="flex pt-0 md:pt-5 overflow-x-scroll md:overflow-auto "
             >
               {blogs.map(({ blogTitle, _id, blogDescription, blogImg }) => {

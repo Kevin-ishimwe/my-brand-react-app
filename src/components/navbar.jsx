@@ -46,13 +46,14 @@ function Navbar() {
       localStorage.setItem("theme", "light");
     }
   };
-  const linkStyle = "z-10  text-2xl font-medium md:dark:text-white [text-transform:lowercase] ";
+  const linkStyle =
+    "z-10  text-2xl font-medium md:dark:text-white [text-transform:lowercase] ";
 
   return (
     <div>
       <nav
         id="navbar"
-        className="pr-5 md:pr-0 ease-in duration-500 fixed top-0  dark:ml-0  w-full justify-between  flex z-20  lg:pl-16 lg:dark:pl-8 "
+        className="pr-5 md:pr-0 ease-in duration-500 fixed top-0  dark:ml-0  w-full justify-between  flex z-20  lg:pl-16  "
       >
         <h1 className="logo text-5xl scale-75 sm:scale-85 md:scale-95 ">IK</h1>
         {theme === "light" ? (
@@ -62,7 +63,7 @@ function Navbar() {
           />
         ) : (
           <RxSun
-            className="text-white text-4xl mt-2 lg:ml-52 cursor-pointer dark:text-yellow-300"
+            className="text-3xl mt-2 cursor-pointer lg:ml-64  dark:text-yellow-300"
             onClick={handleTheme}
           />
         )}
