@@ -474,7 +474,7 @@ function Landing() {
             </div>
           </div>
           <div id="ContactPage">
-            <div className="flex w-11/12 pb-4 mx-auto shadow-[2px 3px 20px #8080807a] rounded-2xl dark:bg-slate-900 mt-20 lg:w-5/12 md:mt-0 min-h-[50vh]">
+            <div className="flex w-11/12 pb-4 mx-auto shadow-[2px_3px_30px_#cbcbcb] rounded-2xl dark:bg-slate-900 mt-20 lg:w-5/12 md:mt-0 min-h-[50vh] ">
               <form
                 className="flex flex-col w-full px-5"
                 onSubmit={handleMessage}

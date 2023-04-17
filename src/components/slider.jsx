@@ -68,22 +68,25 @@ function SliderComponent() {
     {
       img: AIapp,
       name: "music app",
+      desc: "Welcome to our AI website, where we explore the latest developments in artificial intelligence and the groundbreaking work being done by OpenAI.",
       demo: "https://github.com/Kevin-ishimwe/MusicWebApp",
     },
     {
       img: reddy,
       name: "portfolio website",
+      desc: "Welcome to our front-end development website, where we showcase the latest trends and techniques in building stunning user interfaces and web applications.",
       demo: "https://my-public-portfolio101.netlify.app/",
     },
     {
       img: musicapp,
       name: "AI app",
-      desc: "openAI api app",
+      desc: "Whether you're a casual listener, a serious musician, or somewhere in between, we've got you covered with the latest news, reviews, and insights from the world of music.",
       demo: "https://github.com/Kevin-ishimwe/MusicWebApp",
     },
     {
       img: Capture,
       name: "health website",
+      desc: "I worked closely with the content team to ensure that the website's design and functionality aligned with the organization's mission to promote healthy living and well-being.",
       demo: "https://agceramoz.com",
     },
   ];
@@ -91,7 +94,7 @@ function SliderComponent() {
     <div className="dark:bg-[#040b1e]">
       <div className="min-h-[34em]">
         <Slider {...settings}>
-          {slides.map(({ img, name, demo }) => {
+          {slides.map(({ img, name, demo, desc }) => {
             return (
               <div
                 key={img}
@@ -107,15 +110,15 @@ function SliderComponent() {
                   id="div_see_text"
                   className="absolute -top-96 right-0 scale-y-150 "
                 >
-                  <h2 className="text-white text-2xl">{name}</h2>
-                  <p className="text-white">details</p>
+                  <h2 className="text-white text-2xl ml-2">{name}</h2>
+                  <p className="text-white text-xs px-2">{desc}</p>
                   <a
                     href={demo}
                     target="_blank"
-                    className="text-yellow-200"
+                    className="text-pink-600 ml-2 font-semibold border-b-2"
                     rel="noreferrer"
                   >
-                    demo
+                    visit
                   </a>
                 </div>
               </div>
