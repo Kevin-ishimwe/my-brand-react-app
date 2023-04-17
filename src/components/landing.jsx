@@ -21,6 +21,8 @@ import figma from "../assets/figma.png";
 import swagger from "../assets/swagger.png";
 import jest from "../assets/jest.png";
 import git from "../assets/git.png";
+import GADS from "../assets/certificates/GADS Certificate - Ishimwe Kevin.png";
+import FREE from "../assets/certificates/freecodecamp.PNG";
 import Footer from "./footer";
 import { RiDownloadCloudFill } from "react-icons/ri";
 import BlogsContext from "./getblogs";
@@ -300,7 +302,7 @@ function Landing() {
             </p>
             <a
               id="skillz"
-              href="https://firebasestorage.googleapis.com/v0/b/my-brand-kevin.appspot.com/o/myResume%2FmyResumeKevin.pdf?alt=media&token=35996097-5f9f-4ef4-923f-9e42c1c3922f"
+              href="https://firebasestorage.googleapis.com/v0/b/my-brand-kevin.appspot.com/o/myResume%2FResumeKevin-3.pdf?alt=media&token=3e63fa3e-8985-45b1-ba8d-68984b5365ab"
               data-aos="fade-up"
               className=" flex lg:dark:ml-8  mt-10 rounded-full  dark:bg-yellow-400  mx-auto dark:text-black ease-out font-semibold duration-300 bg-[#00034a] text-1xl mb-5 max-w-fit  p-2 mx-a text-white sm:ml-4 lg:ml-28 sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
               download="resume_KEVIN_ISHIMWE"
@@ -400,7 +402,7 @@ function Landing() {
                           data-aos-anchor="#parent"
                           data-aos="flip-right"
                           data-aos-offset="30"
-                          className="rounded-t-lg"
+                          className="rounded-t-lg h-[45vh] w-full"
                           src={blogImg}
                           alt=""
                         />
@@ -437,12 +439,40 @@ function Landing() {
           }
           <p
             id="myWork"
-            className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2 mt-12   "
+            className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  "
           >
             PROJECTS
           </p>
           <SliderComponent />
-
+          <div className="mb-20 mt-8">
+            <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-[#d9a91a] text-3xl text-[#000223] font-semibold  mb-2  mt-8 ">
+              Certifications
+            </p>
+            <div className="flex justify-center flex-wrap">
+              <a
+                href="https://adscerts.com/scholar/5CD62B056ECD15A"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={GADS}
+                  alt=""
+                  className="w-[92vw] md:w-[30em] md:hover:scale-125 transition-all mx-4 shadow-2xl"
+                />
+              </a>
+              <a
+                href="https://www.freecodecamp.org/certification/ish_kevin/javascript-algorithms-and-data-structures"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={FREE}
+                  alt=""
+                  className="w-[90vw] md:w-[30em] md:hover:scale-125 transition-all shadow-xl "
+                />
+              </a>
+            </div>
+          </div>
           <div id="ContactPage">
             <div className="flex w-11/12 pb-4 mx-auto shadow-[2px 3px 20px #8080807a] rounded-2xl dark:bg-slate-900 mt-20 lg:w-5/12 md:mt-0 min-h-[50vh]">
               <form

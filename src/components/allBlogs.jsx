@@ -1,17 +1,16 @@
-import React, { useRef, useState, useEffect,useContext } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
-import { NavLink,Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import BlogsContext from "./getblogs";
 
 function AllBlogs({ num }) {
   const [blogs, setblogs] = useState([]);
 
-const allblogs = useContext(BlogsContext);
+  const allblogs = useContext(BlogsContext);
 
-useEffect(() => {
-    setblogs(allblogs)
-    
+  useEffect(() => {
+    setblogs(allblogs);
   }, [allblogs]);
   return (
     <div className="dark:bg-[#040b1e] min-h-[100vh] w-full">
@@ -24,12 +23,12 @@ useEffect(() => {
               key={_id}
             >
               <div className="rounded-lg shadow-2xl bg-white dark:bg-slate-900  max-w-sm">
-                <Link
-                  to={`/singleblog?id=${_id}`}
-                  spy="true"
-                  smooth="true"
-                >
-                  <img className="rounded-t-lg" src={blogImg} alt="" />
+                <Link to={`/singleblog?id=${_id}`} spy="true" smooth="true">
+                  <img
+                    className="rounded-t-lg w-full h-[50vh] p-1"
+                    src={blogImg}
+                    alt=""
+                  />
                 </Link>
                 <div className="p-6">
                   <h5 className="text-gray-900 text-xl dark:text-yellow-300 font-semibold ">

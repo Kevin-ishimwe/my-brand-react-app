@@ -89,7 +89,7 @@ function SliderComponent() {
   ];
   return (
     <div className="dark:bg-[#040b1e]">
-      <div style={{ minHeight: "50vw" }}>
+      <div className="min-h-[34em]">
         <Slider {...settings}>
           {slides.map(({ img, name, demo }) => {
             return (
