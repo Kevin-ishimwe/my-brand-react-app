@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/my-brand-react-app/static/css/main.c73d14fb.css",
-    "main.js": "/my-brand-react-app/static/js/main.7b4882b8.js",
+    "main.css": "/my-brand-react-app/static/css/main.5a8bfc41.css",
+    "main.js": "/my-brand-react-app/static/js/main.1349c5c1.js",
     "static/js/787.a91260d6.chunk.js": "/my-brand-react-app/static/js/787.a91260d6.chunk.js",
     "static/media/reddy.png": "/my-brand-react-app/static/media/reddy.189d4c95426d9f8fc212.png",
     "static/media/herobg.png": "/my-brand-react-app/static/media/herobg.801494a21881c2eabcf4.png",
+    "static/media/GADS Certificate - Ishimwe Kevin.png": "/my-brand-react-app/static/media/GADS Certificate - Ishimwe Kevin.b5acb95a28d1ff8970d9.png",
     "static/media/AIapp.JPG": "/my-brand-react-app/static/media/AIapp.3ae7f9cac8f14b9bdfbc.JPG",
     "static/media/Capture.JPG": "/my-brand-react-app/static/media/Capture.88545ba6a7f1d8ad6039.JPG",
     "static/media/musicapp.JPG": "/my-brand-react-app/static/media/musicapp.7cd8e31a387163f9b55d.JPG",
     "static/media/postgresql.png": "/my-brand-react-app/static/media/postgresql.5428b4cd2e5284ada623.png",
+    "static/media/freecodecamp.PNG": "/my-brand-react-app/static/media/freecodecamp.c3d8f09a9667b3e84417.PNG",
     "static/media/mui.png": "/my-brand-react-app/static/media/mui.9561ca31868d2d40f904.png",
     "static/media/react.png": "/my-brand-react-app/static/media/react.02a3258aa25aa0add98d.png",
     "static/media/swagger.png": "/my-brand-react-app/static/media/swagger.cc40dbe040cc5da0f4a6.png",
@@ -23,12 +25,12 @@
     "static/media/slick.ttf": "/my-brand-react-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/my-brand-react-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/my-brand-react-app/index.html",
-    "main.c73d14fb.css.map": "/my-brand-react-app/static/css/main.c73d14fb.css.map",
-    "main.7b4882b8.js.map": "/my-brand-react-app/static/js/main.7b4882b8.js.map",
+    "main.5a8bfc41.css.map": "/my-brand-react-app/static/css/main.5a8bfc41.css.map",
+    "main.1349c5c1.js.map": "/my-brand-react-app/static/js/main.1349c5c1.js.map",
     "787.a91260d6.chunk.js.map": "/my-brand-react-app/static/js/787.a91260d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c73d14fb.css",
-    "static/js/main.7b4882b8.js"
+    "static/css/main.5a8bfc41.css",
+    "static/js/main.1349c5c1.js"
   ]
 }
