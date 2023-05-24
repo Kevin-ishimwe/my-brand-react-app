@@ -52,17 +52,12 @@ code {
 }
 .slick-next {
   position: absolute;
-  margin-right: 3%;
+  margin-right: 4%;
 }
 .slick-prev {
   position: absolute;
-  margin-left: 2%;
+  margin-left: 4%;
   z-index: 10;
-}
-.slick-prev {
-  font-size: 100px;
-  scale: 4;
-  background-color: yellow;
 }
 
 /* blogs */
@@ -128,4 +123,5 @@ code {
   .slick-slider {
     padding: 1%;
   }
+
 }

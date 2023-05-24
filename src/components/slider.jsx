@@ -13,8 +13,7 @@ function SamplePrevArrow(props) {
     <div
       className={className}
       style={{
-        ...style,
-        scale: "2",
+        ...style
       }}
       onClick={onClick}
     />

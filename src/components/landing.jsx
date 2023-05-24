@@ -65,20 +65,18 @@ function Landing() {
   useEffect(() => {
     window.onscroll = () => {
       if (window.visualViewport.width > 1024) {
-        if (Math.floor(window.scrollY) > 1900) {
+        if (Math.floor(window.scrollY) > 2000) {
           hero.current.style.position = "absolute";
           about.current.style.position = "absolute";
-          about.current.style.top = "180vh";
+          about.current.style.top = "200vh";
         } else if (Math.floor(window.scrollY) > 790) {
           // console.log(window.scrollY);
 
           hero.current.style.position = "absolute";
-          hero.current.style.top = "116vh";
+          hero.current.style.top = "120vh";
           hero.current.style.right = "0%";
           about.current.style.position = "fixed";
           about.current.style.top = "3vh";
-
-          console.log(Math.floor(window.scrollY));
         } else {
           hero.current.style.position = "fixed";
           hero.current.style.top = "0vh";
@@ -99,6 +97,7 @@ function Landing() {
 
     await fetch("https://fair-teal-chinchilla-tam.cyclic.app/addmessages", {
       method: "POST",
+      mode: "cors",
       headers: {
         Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json",
@@ -111,6 +110,7 @@ function Landing() {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         popup.current.style.display = "grid";
         document.getElementById("wait").style.display = "none";
         e.target.lastChild.children[1].textContent = "SEND";
@@ -186,7 +186,7 @@ function Landing() {
       </div>
 
       <div className="landing dark:bg-[#040b1e]">
-        <div className="dark:from-[#040b1e] dark:to-[#040b1e]  relative min-h-full lg:absolute bg-gradient-to-r from-[#B4862A] to-[#ECBE3A]   w-full pb-5  ">
+        <div className="dark:from-[#040b1e] dark:to-[#040b1e]  relative min-h-[140vh] md:min-h-full lg:absolute bg-gradient-to-r from-[#B4862A] to-[#ECBE3A]   w-full pb-5  ">
           <div className=" flex flex-col-reverse md:dark:flex-col-reverse md:dark:flex sm:-mt-20 sm:w-full md:pt-20 md:pb-11  md:mt-0 md:mb-11  lg:mb-0 lg:mt-36  ">
             <Navbar />
             <div className="sm:w-full md:w-9/12">
@@ -250,7 +250,7 @@ function Landing() {
               data-aos="fade-zoom-in"
               data-aos-duration="2000"
               data-aos-once={true}
-              className="dark:rounded-full lg:dark:rounded-none md:dark:bg-inherit md:dark:rounded-none lg:dark:bg-yellow-400 dark:bg-yellow-400  relative  rounded-full   sm:mt-20 md:mt-0 bg-white h-2/3 w-8/12 mx-auto sm:rounded-none sm:bg-inherit sm:h-2/3 md:w-6/12 md:absolute md:top-0 md:-right-0  lg:fixed top-0 lg:-right-7 md:h-[100vh] z-10 lg:w-[48vw]"
+              className="dark:rounded-full lg:dark:rounded-none md:dark:bg-inherit md:dark:rounded-none lg:dark:bg-yellow-400 dark:bg-yellow-400  relative  rounded-full   sm:mt-20 md:mt-0 bg-white h-2/3 w-8/12 mx-auto sm:rounded-none sm:bg-inherit sm:h-2/3 md:w-6/12 md:absolute md:top-0 md:-right-0  lg:fixed bottom-0 lg:-right-7 md:h-[fit] z-10 lg:w-[48vw] lg:h-fit"
               alt="my_AI_generated_image"
               src={herobg}
               ref={hero}
@@ -316,7 +316,7 @@ function Landing() {
         </div>
         <div
           id="anchor_p"
-          className="pt-12 dark:bg-[#040b1e] relative lg:w-6/12 lg:mt-96 lg:pt-72 lg:pb-32  lg:float-right "
+          className="pt-12 dark:bg-[#040b1e] relative lg:w-6/12 lg:mt-96 lg:pt-[80vh] lg:pb-32  lg:float-right "
         >
           <p className="lg:dark:ml-8 sm:ml-6 text-center dark:text-yellow-300 text-4xl text-[#000223] font-semibold  mb-6  lg:ml-28 lg:mt-9 ">
             SKILLS
@@ -474,7 +474,7 @@ function Landing() {
             </div>
           </div>
           <div id="ContactPage">
-            <div className="flex w-11/12 pb-4 mx-auto shadow-[2px_3px_30px_#cbcbcb] rounded-2xl dark:bg-slate-900 mt-20 lg:w-5/12 md:mt-0 min-h-[50vh] ">
+            <div className="flex w-11/12 pb-4 mx-auto shadow-[2px_3px_30px_#cbcbcb] dark:shadow-lg rounded-2xl dark:bg-slate-900 mt-20 lg:w-5/12 md:mt-0 min-h-[50vh] ">
               <form
                 className="flex flex-col w-full px-5"
                 onSubmit={handleMessage}
