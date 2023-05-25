@@ -95,7 +95,7 @@ function Landing() {
     document.getElementById("wait").style.display = "grid";
     e.target.lastChild.children[1].textContent = ` LOADING...`;
 
-    await fetch("https://fair-teal-chinchilla-tam.cyclic.app/addmessages", {
+    await fetch("https://my-backend-portfolio.onrender.com/addmessages", {
       method: "POST",
       mode: "cors",
       headers: {

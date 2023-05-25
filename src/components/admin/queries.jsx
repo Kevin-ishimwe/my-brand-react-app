@@ -7,7 +7,7 @@ function Queries() {
   const [messages, setmessages] = useState([]);
 
   useEffect(() => {
-    fetch("https://fair-teal-chinchilla-tam.cyclic.app/getmessages", {
+    fetch("https://my-backend-portfolio.onrender.com//getmessages", {
       method: "GET",
       headers: {
         "Access-Control-Allow-Credentials": true,
