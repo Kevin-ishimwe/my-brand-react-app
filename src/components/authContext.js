@@ -5,7 +5,7 @@ export const AuthProvider = ({ children }) => {
   const [isauth, setisauth] = useState(false);
   const checkToken = async () => {
     const token = localStorage.getItem("token");
-    await fetch('https://fair-teal-chinchilla-tam.cyclic.app/getmessages', {
+    await fetch("https://my-backend-portfolio.onrender.com/getmessages", {
       method: "GET",
       headers: {
         "Access-Control-Allow-Credentials": true,
