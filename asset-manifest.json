@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/my-brand-react-app/static/css/main.cc685563.css",
-    "main.js": "/my-brand-react-app/static/js/main.3a9de71d.js",
+    "main.js": "/my-brand-react-app/static/js/main.2f1e4b73.js",
     "static/js/787.a91260d6.chunk.js": "/my-brand-react-app/static/js/787.a91260d6.chunk.js",
     "static/media/reddy.png": "/my-brand-react-app/static/media/reddy.189d4c95426d9f8fc212.png",
     "static/media/herobg.png": "/my-brand-react-app/static/media/herobg.801494a21881c2eabcf4.png",
+    "static/media/ecommerce.PNG": "/my-brand-react-app/static/media/ecommerce.7bde42f88931737f32f4.PNG",
     "static/media/GADS Certificate - Ishimwe Kevin.png": "/my-brand-react-app/static/media/GADS Certificate - Ishimwe Kevin.b5acb95a28d1ff8970d9.png",
     "static/media/AIapp.JPG": "/my-brand-react-app/static/media/AIapp.3ae7f9cac8f14b9bdfbc.JPG",
     "static/media/Capture.JPG": "/my-brand-react-app/static/media/Capture.88545ba6a7f1d8ad6039.JPG",
@@ -26,11 +27,11 @@
     "static/media/slick.woff": "/my-brand-react-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/my-brand-react-app/index.html",
     "main.cc685563.css.map": "/my-brand-react-app/static/css/main.cc685563.css.map",
-    "main.3a9de71d.js.map": "/my-brand-react-app/static/js/main.3a9de71d.js.map",
+    "main.2f1e4b73.js.map": "/my-brand-react-app/static/js/main.2f1e4b73.js.map",
     "787.a91260d6.chunk.js.map": "/my-brand-react-app/static/js/787.a91260d6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cc685563.css",
-    "static/js/main.3a9de71d.js"
+    "static/js/main.2f1e4b73.js"
   ]
 }
