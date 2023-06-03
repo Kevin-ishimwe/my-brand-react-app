@@ -7,7 +7,7 @@ function Queries() {
   const [messages, setmessages] = useState([]);
 
   useEffect(() => {
-    fetch("https://my-backend-portfolio.onrender.com/getmessages", {
+    fetch("https://fair-teal-chinchilla-tam.cyclic.app/getmessages", {
       method: "GET",
       headers: {
         "Access-Control-Allow-Credentials": true,
@@ -52,7 +52,7 @@ function Queries() {
                 onClick={async (e) => {
                   e.target.textContent = "LOADING...";
                   await fetch(
-                    `https://my-backend-portfolio.onrender.com/deletemessage/${e.target.parentElement.id}`,
+                    `https://fair-teal-chinchilla-tam.cyclic.app/deletemessage/${e.target.parentElement.id}`,
                     {
                       method: "DELETE",
                       headers: {

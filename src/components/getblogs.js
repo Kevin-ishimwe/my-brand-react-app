@@ -4,7 +4,7 @@ const BlogsContext = createContext();
 export const BlogsProvider = ({ children }) => {
   const [blogs, setblogs] = useState([]);
   useEffect(() => {
-    fetch("https://my-backend-portfolio.onrender.com/getblogs", {
+    fetch("https://fair-teal-chinchilla-tam.cyclic.app/getblogs", {
       method: "GET",
       headers: {
         Accept: "application/json, text/plain, */*",

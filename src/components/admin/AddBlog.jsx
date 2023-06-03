@@ -19,7 +19,7 @@ function AddBlog() {
     body.append("blogTitle", form[0].value);
     body.append("blogDescription", form[2].value);
     body.append("blogContent", value);
-    await fetch("https://my-backend-portfolio.onrender.com/addblog", {
+    await fetch("https://fair-teal-chinchilla-tam.cyclic.app/addblog", {
       method: "POST",
       headers: {
         Accept: "application/json",

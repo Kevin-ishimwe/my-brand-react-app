@@ -4,7 +4,7 @@ import { RiDownloadCloudFill } from "react-icons/ri";
 function ABOUT_ME() {
   return (
     <div className="relative lg:sticky top-0 min-h-screen flex flex-col justify-center lg:w-[50vw] ">
-      <p className="lg:dark:ml-8 sm:ml-6   dark:text-yellow-300 text-3xl text-[#000223] font-semibold text-center lg:text-left  mb-5  lg:ml-20 lg:mb-5 ">
+      <p className="lg:dark:ml-8 sm:ml-6   dark:text-yellow-300 text-3xl text-[#000223] font-semibold text-center lg:text-left  mb-5  lg:ml-8 lg:mb-5 ">
         ab
         <span className="border-b-4 dark:border-yellow-400 border-[#000223] pr-2">
           out
@@ -29,7 +29,7 @@ function ABOUT_ME() {
         </p>
         <a
           id="skillz"
-          href="https://firebasestorage.googleapis.com/v0/b/my-brand-kevin.appspot.com/o/myResume%2FResumeKevin-3.pdf?alt=media&token=3e63fa3e-8985-45b1-ba8d-68984b5365ab"
+          href="https://firebasestorage.googleapis.com/v0/b/my-brand-kevin.appspot.com/o/myResume%2Fresume_kevinIshimwe.pdf?alt=media&token=2f73aa9a-d0a8-4f5f-a5a2-9e7c4fddbb51&_gl=1*1ptviax*_ga*MTIwMzQyMzU1My4xNjcxNDI2MzYz*_ga_CW55HF8NVT*MTY4NTgxOTg5Ni40LjEuMTY4NTgxOTk2MC4wLjAuMA.."
           data-aos="fade-up"
           className=" flex mx-auto lg:ml-8  mt-10 rounded-full  dark:bg-yellow-400 dark:text-black ease-out font-semibold duration-300 bg-[#00034a] text-1xl mb-5 max-w-fit  p-2 lg:mx-2 text-white sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
           download="resume_KEVIN_ISHIMWE"

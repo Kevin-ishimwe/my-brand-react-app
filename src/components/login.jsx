@@ -16,7 +16,7 @@ function Login() {
     e.target.lastElementChild.lastChild.textContent = "LOADING...";
     e.target.lastElementChild.firstChild.style.display = "grid";
     console.log(e.target.lastElementChild.firstChild);
-    await fetch("https://my-backend-portfolio.onrender.com/login", {
+    await fetch("https://fair-teal-chinchilla-tam.cyclic.app/login", {
       method: "POST",
       headers: {
         Accept: "application/json,text/plain,*/*",
