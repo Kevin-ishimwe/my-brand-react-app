@@ -7,7 +7,7 @@ function Queries() {
   const [messages, setmessages] = useState([]);
 
   useEffect(() => {
-    fetch("https://my-backend-portfolio.onrender.com//getmessages", {
+    fetch("https://fair-teal-chinchilla-tam.cyclic.app/getmessages", {
       method: "GET",
       headers: {
         "Access-Control-Allow-Credentials": true,
@@ -28,7 +28,6 @@ function Queries() {
       <Sidenav />
       <div className="ml-[2em] md:ml-5 w-full px-5">
         <h1 className="text-4xl font-semibold text-[#068dfb] drop-shadow-lg mb-10 text-center">
-          {" "}
           Queries...
         </h1>
         {messages.map(({ email, name, content, _id }) => {
