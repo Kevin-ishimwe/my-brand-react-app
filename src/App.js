@@ -12,7 +12,6 @@ import { BlogsProvider } from "./components/getblogs";
 import { AuthProvider } from "./components/authContext";
 import Queries from "./components/admin/queries";
 import ProtectedRoute from "./protectedRoutes";
-
 function App() {
   return (
     <>

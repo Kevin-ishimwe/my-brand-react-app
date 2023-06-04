@@ -5,28 +5,135 @@ import herobg from "../assets/herobg.png";
 import Navbar from "./navbar";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import js_vanilla from "../assets/js_vanilla.png";
+import html5 from "../assets/html5.png";
+import css from "../assets/css.png";
+import react from "../assets/react.png";
+import sass from "../assets/sass.png";
+import tail from "../assets/tail.png";
+import mui from "../assets/mui.png";
+import node from "../assets/node.png";
+import mongo from "../assets/mongo.png";
+import fire from "../assets/fire.png";
+import postgresql from "../assets/postgresql.png";
+import jwt from "../assets/jwt.png";
+import figma from "../assets/figma.png";
+import swagger from "../assets/swagger.png";
+import jest from "../assets/jest.png";
+import git from "../assets/git.png";
 import GADS from "../assets/certificates/GADS Certificate - Ishimwe Kevin.png";
 import FREE from "../assets/certificates/freecodecamp.PNG";
 import Footer from "./footer";
+import { RiDownloadCloudFill } from "react-icons/ri";
 import BlogsContext from "./getblogs";
 import { Link } from "react-router-dom";
-import ABOUT_ME from "./about";
-import Skillz from "./skillz";
-import Contact from "./contact";
 
 function Landing() {
+  const [err, seterr] = useState("");
+  const [message, setmessage] = useState("");
+  const popup = useRef();
   const [blogs, setblogs] = useState([]);
   const allblogs = useContext(BlogsContext);
 
   useEffect(() => {
     AOS.init();
   }, []);
-
+  const front_endskills = [
+    { img: html5, name: "html5" },
+    { img: css, name: "css" },
+    { img: js_vanilla, name: "javascript" },
+    { img: react, name: "react" },
+    { img: sass, name: "sass" },
+    { img: tail, name: "tailwind" },
+    { img: mui, name: "material ui" },
+  ];
+  const back_endskills = [
+    { img: node, name: "node js" },
+    { img: mongo, name: "MongoDB" },
+    { img: jwt, name: "JWT" },
+    { img: fire, name: "firebase" },
+    { img: postgresql, name: "postgresql" },
+  ];
+  const other_skills = [
+    { img: git, name: "git/github" },
+    { img: jest, name: "jest" },
+    { img: swagger, name: "docs" },
+    { img: figma, name: "figma" },
+  ];
+  const about = useRef();
   const hero = useRef();
+  useEffect(() => {
+    window.onscroll = () => {
+      if (window.visualViewport.width > 1024) {
+        if (Math.floor(window.scrollY) > 2000) {
+          hero.current.style.position = "absolute";
+          about.current.style.position = "absolute";
+          about.current.style.top = "200vh";
+        } else if (Math.floor(window.scrollY) > 790) {
+          // console.log(window.scrollY);
+
+          hero.current.style.position = "absolute";
+          hero.current.style.top = "120vh";
+          hero.current.style.right = "0%";
+          about.current.style.position = "fixed";
+          about.current.style.top = "3vh";
+        } else {
+          hero.current.style.position = "fixed";
+          hero.current.style.top = "0vh";
+          about.current.style.position = "relative";
+          about.current.style.top = "3vh";
+        }
+      }
+    };
+  }, []);
   useEffect(() => {
     setblogs(allblogs);
     console.log(allblogs);
   }, [allblogs]);
+  const handleMessage = async (e) => {
+    e.preventDefault();
+    document.getElementById("wait").style.display = "grid";
+    e.target.lastChild.children[1].textContent = ` LOADING...`;
+
+    await fetch("https://my-backend-portfolio.onrender.com/addmessages", {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: e.target.name.value,
+        email: e.target.email.value,
+        content: e.target.content.value,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        popup.current.style.display = "grid";
+        document.getElementById("wait").style.display = "none";
+        e.target.lastChild.children[1].textContent = "SEND";
+        e.target.reset();
+        if (data.status === "success") {
+          setmessage(data.message);
+          setTimeout(() => {
+            popup.current.style.display = "none";
+            setmessage("");
+          }, 2000);
+        } else {
+          seterr(data.message);
+          setTimeout(() => {
+            popup.current.style.display = "none";
+            seterr("");
+          }, 2000);
+        }
+        console.log(data);
+      });
+  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>
