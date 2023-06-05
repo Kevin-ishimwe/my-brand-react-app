@@ -15,6 +15,7 @@ import figma from "../assets/figma.png";
 import swagger from "../assets/swagger.png";
 import jest from "../assets/jest.png";
 import git from "../assets/git.png";
+import docker from "../assets/docker.png";
 
 function Skillz() {
   const front_endskills = [
@@ -38,6 +39,7 @@ function Skillz() {
     { img: jest, name: "jest" },
     { img: swagger, name: "docs" },
     { img: figma, name: "figma" },
+    { img: docker, name: "docker" },
   ];
   return (
     <div
