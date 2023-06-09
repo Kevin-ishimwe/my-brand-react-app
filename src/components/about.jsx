@@ -1,7 +1,29 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { RiDownloadCloudFill } from "react-icons/ri";
+import Typical from "react-typical";
 
 function ABOUT_ME() {
+  const [text, settext] = useState("");
+  const all =
+    "With over 2 years of experience, I have honed my ability to stay focused and productive, even under heavy amounts of stress. My friends often come to me for help with their coding projects, which is a testimony to my skills and dedication to the craft. One of my greatest strengths as a web developer is my problem-solving skills. I find great satisfaction in breaking down complex issues and building elegant and functional websites. I am always looking fornew ways to expand my knowledge and stay current with the latesttrends and technologies in web development. My long-term goal is tobecome a senior web developer and eventually start my own development firm.";
+
+  useEffect(() => {
+    let typingTimer;
+
+    const typeText = () => {
+      for (let i = 0; i <= all.length; i++) {
+        typingTimer = setTimeout(() => {
+          settext(all.substring(0, i));
+        }, 20 * i); // Adjust the delay between each character appearance if needed (in milliseconds)
+      }
+    };
+
+    typeText();
+
+    return () => {
+      clearTimeout(typingTimer);
+    };
+  }, []);
   return (
     <div className="relative lg:sticky top-0 min-h-screen flex flex-col justify-center lg:w-[50vw] ">
       <p className="lg:dark:ml-8 sm:ml-6   dark:text-yellow-300 text-3xl text-[#000223] font-semibold text-center lg:text-left  mb-5  lg:ml-8 lg:mb-5 ">
@@ -12,20 +34,12 @@ function ABOUT_ME() {
         me
       </p>
       <div className=" flex flex-col justify-center ">
-        <p className="lg:dark:ml-8 w-11/12 text-center mx-auto  dark:text-[#aaaa8d]  md:text-left  lg:ml-8 text-lg text-gray-800">
-          With over 2 years of experience, I have honed my ability to stay
-          focused and productive, even under heavy amounts of stress. My friends
-          often come to me for help with their coding projects, which is a
-          testimony to my skills and dedication to the craft. One of my greatest
-          strengths as a web developer is my problem-solving skills.
-          <br></br>
-          <br></br> I find great satisfaction in breaking down complex issues
-          and building elegant and functional websites. I am always looking for
-          new ways to expand my knowledge and stay current with the latest
-          trends and technologies in web development. My long-term goal is to
-          become a senior web developer and eventually start my own development
-          firm.
-          <br></br>
+        <p
+          id="typing-text"
+          className="lg:dark:ml-8 w-11/12 text-center mx-auto  dark:text-[#aaaa8d]  md:text-left  lg:ml-8 text-lg text-gray-800"
+        >
+          {text}
+          <span className="flux text-xl font-extrabold">|</span>
         </p>
         <a
           id="skillz"

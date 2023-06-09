@@ -42,3 +42,16 @@
   border-color: white;
   margin-left: 3%;
 }
+/* text typing effect */
+.flux {
+  font-size: 20px;
+  animation: 1s fluxing linear infinite;
+}
+@keyframes fluxing {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

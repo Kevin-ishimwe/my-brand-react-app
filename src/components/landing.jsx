@@ -5,6 +5,7 @@ import herobg from "../assets/herobg.png";
 import Navbar from "./navbar";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Typical from "react-typical";
 import GADS from "../assets/certificates/GADS Certificate - Ishimwe Kevin.png";
 import FREE from "../assets/certificates/freecodecamp.PNG";
 import Footer from "./footer";
@@ -27,6 +28,7 @@ function Landing() {
     setblogs(allblogs);
     console.log(allblogs);
   }, [allblogs]);
+  const steps = ["FULLSTACK WEB DEVELOPER", 3000];
 
   return (
     <div>
@@ -47,15 +49,18 @@ function Landing() {
                 >
                   ISHIMWE KEVIN
                 </p>
-                <p
+
+                <Typical
                   data-aos-id="my-element"
                   data-aos="fade-zoom-in"
                   data-aos-duration="1000"
                   data-aos-delay="200"
-                  className="dark:text-yellow-400  text-center lg:text-left mt-1 text-2xl sm:ml-4 md:ml-8  md:text-3xl text-[#000223] font-semibold  "
-                >
-                  FULLSTACK WEB DEVELOPER
-                </p>
+                  className=" transition-all dark:text-yellow-400  text-center lg:text-left mt-1 text-2xl sm:ml-4 md:ml-8  md:text-3xl text-[#000223] font-semibold  "
+                  steps={steps}
+                  loop={Infinity}
+                  wrapper="p"
+                />
+
                 <p
                   data-aos="fade"
                   data-aos-duration="1000"
