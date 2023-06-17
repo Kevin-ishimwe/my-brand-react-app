@@ -1,4 +1,3 @@
-import { Button } from "bootstrap";
 import React, { useState, useEffect } from "react";
 import Sidenav from "./sidebar";
 import { FaTrash } from "react-icons/fa";
@@ -7,7 +6,7 @@ function Queries() {
   const [messages, setmessages] = useState([]);
 
   useEffect(() => {
-    fetch("https://fair-teal-chinchilla-tam.cyclic.app/getmessages", {
+    fetch("https://my-backend-portfolio.onrender.com/getmessages", {
       method: "GET",
       headers: {
         "Access-Control-Allow-Credentials": true,
@@ -28,7 +27,6 @@ function Queries() {
       <Sidenav />
       <div className="ml-[2em] md:ml-5 w-full px-5">
         <h1 className="text-4xl font-semibold text-[#068dfb] drop-shadow-lg mb-10 text-center">
-          {" "}
           Queries...
         </h1>
         {messages.map(({ email, name, content, _id }) => {
@@ -53,7 +51,7 @@ function Queries() {
                 onClick={async (e) => {
                   e.target.textContent = "LOADING...";
                   await fetch(
-                    `https://fair-teal-chinchilla-tam.cyclic.app/deletemessage/${e.target.parentElement.id}`,
+                    `https://my-backend-portfolio.onrender.com/deletemessage/${e.target.parentElement.id}`,
                     {
                       method: "DELETE",
                       headers: {

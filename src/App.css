@@ -7,12 +7,11 @@
   text-align: center;
 }
 
-
 .logo {
   font-family: "Romanesco", sans-serif;
   font-weight: 500;
   color: azure;
-  margin: -0.2% 0%;
+  margin: 0% 0%;
   padding: 9px 18px;
   border-radius: 50%;
   border: solid azure;
@@ -42,4 +41,17 @@
 .learn:hover {
   border-color: white;
   margin-left: 3%;
+}
+/* text typing effect */
+.flux {
+  font-size: 20px;
+  animation: 1s fluxing linear infinite;
+}
+@keyframes fluxing {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

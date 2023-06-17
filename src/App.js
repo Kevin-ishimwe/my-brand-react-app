@@ -12,12 +12,14 @@ import { BlogsProvider } from "./components/getblogs";
 import { AuthProvider } from "./components/authContext";
 import Queries from "./components/admin/queries";
 import ProtectedRoute from "./protectedRoutes";
+
 function App() {
   return (
     <>
       <Router basename="/my-brand-react-app">
         <AuthProvider>
           <Routes>
+            <Route path="*" element={<Landing />} />
             <Route
               exact
               path="/"
@@ -61,7 +63,7 @@ function App() {
               path="/addblog"
               element={
                 <ProtectedRoute>
-                  <AddBlog />{" "}
+                  <AddBlog />
                 </ProtectedRoute>
               }
             />

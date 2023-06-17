@@ -66,7 +66,7 @@ function ManageBlogs() {
                     setpopup("");
                     console.log(id);
                     await fetch(
-                      `https://fair-teal-chinchilla-tam.cyclic.app/deleteblog/${id}`,
+                      `https://my-backend-portfolio.onrender.com/deleteblog/${id}`,
                       {
                         method: "DELETE",
                         headers: {

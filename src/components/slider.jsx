@@ -3,10 +3,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AIapp from "../assets/projects/AIapp.JPG";
-import AGCera from "../assets/projects/AGCera.JPG";
 import musicapp from "../assets/projects/musicapp.JPG";
 import Capture from "../assets/projects/Capture.JPG";
 import reddy from "../assets/projects/reddy.png";
+import ecommerce from "../assets/projects/ecommerce.PNG";
 
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
@@ -15,11 +15,6 @@ function SamplePrevArrow(props) {
       className={className}
       style={{
         ...style,
-        display: "block",
-        background: "grey",
-        scale: "1",
-        borderRadius: "50%",
-        padding: ".1% 0%",
       }}
       onClick={onClick}
     />
@@ -71,32 +66,41 @@ function SliderComponent() {
   };
   const slides = [
     {
-      img: AIapp,
-      name: "music app",
-      demo: "https://github.com/Kevin-ishimwe/MusicWebApp",
+      img: Capture,
+      name: "health website",
+      desc: "I worked closely with the content team to ensure that the website's design and functionality aligned with the organization's mission to promote healthy living and well-being.",
+      demo: "https://agceramoz.com",
+    },
+    {
+      img: ecommerce,
+      name: "Ecommerce web app",
+      desc: "shop with ease from the comfort of your own home. Our platform is designed to provide you with a seamless online shopping experience, featuring a wide selection of products from various categories.",
+      demo: "https://ecommerce-app-legends-fe.vercel.app/",
+    },
+    {
+      img: musicapp,
+      name: "Music app",
+      desc: "Whether you're a casual listener, a serious musician, or somewhere in between, we've got you covered with the latest news, reviews, and insights from the world of music.",
+      demo: "https://jovial-profiterole-3bf938.netlify.app/",
     },
     {
       img: reddy,
       name: "portfolio website",
-      demo: "https://agceramoz.com",
+      desc: "Welcome to our front-end development website, where we showcase the latest trends and techniques in building stunning user interfaces and web applications.",
+      demo: "https://my-public-portfolio101.netlify.app/",
     },
     {
-      img: musicapp,
-      name: "AI app",
-      desc: "openAI api app",
-      demo: "https://github.com/Kevin-ishimwe/blog-website",
-    },
-    {
-      img: Capture,
-      name: "health website",
-      demo: "https://agceramoz.com",
+      img: AIapp,
+      name: "OPEN AI API app",
+      desc: "Welcome to our AI website, where we explore the latest developments in artificial intelligence and the groundbreaking work being done by OpenAI.",
+      demo: "https://github.com/Kevin-ishimwe/MusicWebApp",
     },
   ];
   return (
-    <div  className="dark:bg-[#040b1e]">
-      <div style={{ minHeight: "50vw" }}>
+    <div className="dark:bg-[#040b1e]">
+      <div className="min-h-[34em]">
         <Slider {...settings}>
-          {slides.map(({ img, name, demo }) => {
+          {slides.map(({ img, name, demo, desc }) => {
             return (
               <div
                 key={img}
@@ -112,10 +116,15 @@ function SliderComponent() {
                   id="div_see_text"
                   className="absolute -top-96 right-0 scale-y-150 "
                 >
-                  <h2 className="text-white text-2xl">{name}</h2>
-                  <p className="text-white">details</p>
-                  <a href={demo} className="text-yellow-200">
-                    demo
+                  <h2 className="text-white text-2xl ml-2">{name}</h2>
+                  <p className="text-white text-xs px-2">{desc}</p>
+                  <a
+                    href={demo}
+                    target="_blank"
+                    className="text-pink-600 ml-2 font-semibold border-b-2"
+                    rel="noreferrer"
+                  >
+                    visit
                   </a>
                 </div>
               </div>

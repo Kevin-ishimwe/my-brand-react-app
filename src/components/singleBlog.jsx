@@ -31,7 +31,7 @@ function Singleblog() {
           <p className="text-[large] mx-2 sm:mx-0  sm:text-xl  text-[#353c4b] font-semibold leading-[1.3em] mt-2 sm:mb-6 dark:text-slate-400">
             {blog.blogDescription}
           </p>
-          <img src={blog.blogImg} className=" w-full max-h-[85vh]" alt="" />
+          <img src={blog.blogImg} className=" mx-auto w-full px-5 " alt="" />
 
           <div
             id="dangerouslySetInnerHTML"
@@ -40,7 +40,7 @@ function Singleblog() {
           ></div>
         </div>
       </div>
-      <div className="flex  mt-20 flex-wrap justify-center sm:justify-start ">
+      <div className="flex  mt-20 flex-wrap justify-center ">
         {sideblog.map(({ blogTitle, _id, blogDescription, blogImg }) => {
           return (
             <NavLink
@@ -54,7 +54,7 @@ function Singleblog() {
                 window.scrollTo(0, 0);
               }}
             >
-              <img className="" src={blogImg} alt="" />
+              <img className="h-[40vh] w-full" src={blogImg} alt="" />
 
               <div className="">
                 <h5 className="text-gray-900 text-2xl dark:text-yellow-300 font-semibold ">
