@@ -43,7 +43,7 @@ function ABOUT_ME() {
         </p>
         <a
           id="skillz"
-          href="https://firebasestorage.googleapis.com/v0/b/my-brand-kevin.appspot.com/o/myResume%2Fresume_kevinIshimwe.pdf?alt=media&token=2f73aa9a-d0a8-4f5f-a5a2-9e7c4fddbb51&_gl=1*1ptviax*_ga*MTIwMzQyMzU1My4xNjcxNDI2MzYz*_ga_CW55HF8NVT*MTY4NTgxOTg5Ni40LjEuMTY4NTgxOTk2MC4wLjAuMA.."
+          href="https://firebasestorage.googleapis.com/v0/b/my-brand-kevin.appspot.com/o/myResume%2Fresume_kevin_Ishimwe.pdf?alt=media&token=32218b57-669a-407b-91c3-9792502a2948"
           data-aos="fade-up"
           className=" flex mx-auto lg:ml-8  mt-10 rounded-full  dark:bg-yellow-400 dark:text-black ease-out font-semibold duration-300 bg-[#00034a] text-1xl mb-5 max-w-fit  p-2 lg:mx-2 text-white sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"
           download="resume_KEVIN_ISHIMWE"

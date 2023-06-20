@@ -8,18 +8,6 @@ import Capture from "../assets/projects/Capture.JPG";
 import reddy from "../assets/projects/reddy.png";
 import ecommerce from "../assets/projects/ecommerce.PNG";
 
-function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-        ...style,
-      }}
-      onClick={onClick}
-    />
-  );
-}
 function SliderComponent() {
   const settings = {
     lazyLoad: true,
@@ -33,13 +21,11 @@ function SliderComponent() {
     autoplay: true,
     autoplaySpeed: 2000,
     slidesToScroll: 1,
-    prevArrow: <SamplePrevArrow />,
-    nextArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
           dots: true,
@@ -49,9 +35,9 @@ function SliderComponent() {
       {
         breakpoint: 900,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
-          centerMode: false,
+          centerMode: true,
         },
       },
       {
@@ -59,7 +45,7 @@ function SliderComponent() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          centerMode: false,
+          centerMode: true,
         },
       },
     ],

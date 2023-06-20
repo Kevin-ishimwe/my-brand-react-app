@@ -36,7 +36,7 @@ function Navbar() {
   return (
     <nav
       id="navbar"
-      className="pr-5 md:pr-0 ease-in duration-500 fixed  top-0  dark:ml-0  w-full justify-between  flex z-20  lg:pl-8 items-center "
+      className="pr-3  md:pr-0 ease-in duration-500 fixed  top-0  dark:ml-0  w-full justify-between  flex z-20  lg:pl-8 items-center "
     >
       <h1 className="logo text-5xl scale-75 sm:scale-85 md:scale-95 ">IK</h1>
       {theme === "light" ? (
