@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my-brand-react-app/static/css/main.17cd1865.css",
-    "main.js": "/my-brand-react-app/static/js/main.b27b6dae.js",
+    "main.css": "/my-brand-react-app/static/css/main.0921720d.css",
+    "main.js": "/my-brand-react-app/static/js/main.7661a92d.js",
     "static/js/787.a91260d6.chunk.js": "/my-brand-react-app/static/js/787.a91260d6.chunk.js",
     "static/media/reddy.png": "/my-brand-react-app/static/media/reddy.189d4c95426d9f8fc212.png",
     "static/media/herobg.png": "/my-brand-react-app/static/media/herobg.801494a21881c2eabcf4.png",
@@ -26,12 +26,12 @@
     "static/media/slick.ttf": "/my-brand-react-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/my-brand-react-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/my-brand-react-app/index.html",
-    "main.17cd1865.css.map": "/my-brand-react-app/static/css/main.17cd1865.css.map",
-    "main.b27b6dae.js.map": "/my-brand-react-app/static/js/main.b27b6dae.js.map",
+    "main.0921720d.css.map": "/my-brand-react-app/static/css/main.0921720d.css.map",
+    "main.7661a92d.js.map": "/my-brand-react-app/static/js/main.7661a92d.js.map",
     "787.a91260d6.chunk.js.map": "/my-brand-react-app/static/js/787.a91260d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.17cd1865.css",
-    "static/js/main.b27b6dae.js"
+    "static/css/main.0921720d.css",
+    "static/js/main.7661a92d.js"
   ]
 }
