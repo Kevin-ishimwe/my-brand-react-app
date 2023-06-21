@@ -39,7 +39,7 @@ function Landing() {
             <div className="flex h-fit lg:h-[250vh]  lg:flex-row flex-col-reverse  mt-0 dark:bg-[#040b1e]">
               <div className=" flex flex-col h-fit justify-left lg:h-[100vh] lg:w-[50vw]  lg:bg-[#fcfcfc] dark:bg-[#040b1e]">
                 <p className="dark:text-yellow-400  text-center lg:text-left mt-4 text-4xl sm:ml-4 md:ml-8 md:text-4xl text-[#000223] lg:mt-[25vh]">
-                  hey there,im
+                  hey there,I'm
                 </p>
                 <p
                   data-aos="fade-down"
@@ -81,7 +81,7 @@ function Landing() {
                   </a>
                   <a
                     href="#skillz"
-                    className="dark:text-yellow-400 dark:border-yellow-300 ease-out duration-300 learn border-solid text-2xl p-2 text-white ml-2 mt-5 pr-5 hover:bg-white hover:text-[#85650e] hover:scale-105"
+                    className="dark:text-yellow-400 dark:border-yellow-300 ease-out duration-300 learn border-solid text-2xl p-2 text-white ml-2 mt-5 pr-5 hover:border-[#85650e] hover:text-[#85650e] hover:scale-105"
                   >
                     LEARN MORE
                   </a>
@@ -97,7 +97,7 @@ function Landing() {
                 data-aos="fade-zoom-in"
                 data-aos-duration="2000"
                 data-aos-once={true}
-                className=" lg:bg-[#e3ad40] rounded-full lg:rounded-none dark:bg-yellow-400  relative     sm:mt-20 lg:mt-0 h-2/3 w-8/12 mx-auto  sm:bg-inherit sm:h-2/3 md:w-6/12 md:top-0 md:-right-0  lg:sticky lg:top-0 bottom-0 lg:-right-0 md:h-[fit] z-10 lg:w-max-[80em] lg:w-[50vw] lg:h-[100vh] object-contain "
+                className=" lg:bg-[#e3ad40] rounded-full lg:rounded-none dark:bg-yellow-400  relative sm:mt-20 lg:mt-0 h-2/3 w-8/12 mx-auto  sm:bg-inherit sm:h-2/3 md:w-6/12 md:top-0 md:-right-0  lg:sticky lg:top-0 bottom-0 lg:-right-0 md:h-[fit] z-10 lg:w-max-[80em] lg:w-[50vw] lg:h-[100vh] lg:object-cover xl:object-contain "
                 alt="my_AI_generated_image"
                 src={herobg}
                 ref={hero}
@@ -190,8 +190,9 @@ function Landing() {
                 >
                   <img
                     src={GADS}
+                    data-aos="flip-left"
                     alt=""
-                    className="w-[92vw] md:w-[30em] md:hover:scale-125 transition-all mx-4 shadow-2xl"
+                    className="w-[90vw] md:w-[30em] md:h-[23em] md:hover:scale-105 transition-all mx-4 shadow-2xl"
                   />
                 </a>
                 <a
@@ -201,8 +202,9 @@ function Landing() {
                 >
                   <img
                     src={FREE}
+                    data-aos="flip-right"
                     alt=""
-                    className="w-[90vw] md:w-[30em] md:hover:scale-125 transition-all shadow-xl "
+                    className="w-[90vw] md:h-[23em] md:w-[30em] md:hover:scale-105 transition-all shadow-xl "
                   />
                 </a>
               </div>
