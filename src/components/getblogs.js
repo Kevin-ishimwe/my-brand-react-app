@@ -4,7 +4,7 @@ const BlogsContext = createContext();
 export const BlogsProvider = ({ children }) => {
   const [blogs, setblogs] = useState([]);
   useEffect(() => {
-    fetch("https://my-backend-portfolio.onrender.com/getblogs", {
+    fetch("https://portfolio-backend-prod.up.railway.app/getblogs", {
       method: "GET",
       headers: {
         Accept: "application/json, text/plain, */*",

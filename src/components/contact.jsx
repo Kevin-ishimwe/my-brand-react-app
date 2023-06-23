@@ -7,7 +7,7 @@ function Contact() {
     document.getElementById("wait").style.display = "grid";
     e.target.lastChild.children[1].textContent = ` LOADING...`;
 
-    await fetch("https://my-backend-portfolio.onrender.com/addmessages", {
+    await fetch("https://portfolio-backend-prod.up.railway.app/addmessages", {
       method: "POST",
       mode: "cors",
       headers: {
