@@ -7,6 +7,9 @@
   text-align: center;
 }
 
+.clipper {
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 10% 48%);
+}
 .logo {
   font-family: "Romanesco", sans-serif;
   font-weight: 500;
@@ -47,5 +50,11 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .clipper {
+    clip-path: none;
   }
 }

@@ -2,16 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 html {
+  cursor: none;
   scroll-behavior: smooth;
   scrollbar-width: none;
   scrollbar-color: rgb(12, 0, 19) rgb(206, 209, 0);
 }
+*:hover {
+  cursor: none;
+}
+
 * {
+  cursor: none;
   scroll-behavior: smooth;
 }
 .dark body {
-  overflow-x: hidden;
   background: #040b1e;
+}
+.dark .custom-cursor {
+  background-color: yellow;
+}
+.custom-cursor {
+  cursor: none;
+  background-color: #040b1e;
+  clip-path: polygon(50% 0%, 100% 100%, 47% 73%, 0 100%);
 }
 body {
   margin: 0;

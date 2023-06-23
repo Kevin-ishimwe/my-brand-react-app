@@ -97,7 +97,7 @@ function Landing() {
                 data-aos="fade-zoom-in"
                 data-aos-duration="2000"
                 data-aos-once={true}
-                className=" lg:bg-[#e3ad40] rounded-full lg:rounded-none dark:bg-yellow-400  relative sm:mt-20 lg:mt-0 h-2/3 w-8/12 mx-auto  sm:bg-inherit sm:h-2/3 md:w-6/12 md:top-0 md:-right-0  lg:sticky lg:top-0 bottom-0 lg:-right-0 md:h-[fit] z-10 lg:w-max-[80em] lg:w-[50vw] lg:h-[100vh] lg:object-cover xl:object-contain "
+                className=" lg:bg-[#e3ad40] rounded-full lg:rounded-none dark:bg-yellow-400  relative sm:mt-20 lg:mt-0 h-2/3 w-8/12 mx-auto  sm:bg-inherit sm:h-2/3 md:w-6/12 md:top-0 md:-right-0  lg:sticky lg:top-0 bottom-0 lg:-right-0 md:h-[fit] z-10 lg:w-max-[80em] lg:w-[55vw] lg:h-[100vh] lg:object-cover xl:object-contain clipper "
                 alt="my_AI_generated_image"
                 src={herobg}
                 ref={hero}

@@ -12,10 +12,12 @@ import { BlogsProvider } from "./components/getblogs";
 import { AuthProvider } from "./components/authContext";
 import Queries from "./components/admin/queries";
 import ProtectedRoute from "./protectedRoutes";
+import CustomCursor from "./components/customCursor";
 
 function App() {
   return (
     <>
+      <CustomCursor />
       <Router basename="/my-brand-react-app">
         <AuthProvider>
           <Routes>
