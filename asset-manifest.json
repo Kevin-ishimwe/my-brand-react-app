@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/my-brand-react-app/static/css/main.9c4bfe84.css",
-    "main.js": "/my-brand-react-app/static/js/main.1f8ba08e.js",
+    "main.css": "/my-brand-react-app/static/css/main.cd0ddddd.css",
+    "main.js": "/my-brand-react-app/static/js/main.65a61e5d.js",
     "static/js/787.a91260d6.chunk.js": "/my-brand-react-app/static/js/787.a91260d6.chunk.js",
     "static/media/devpulse.png": "/my-brand-react-app/static/media/devpulse.b22a0305beb6a893d590.png",
     "static/media/reddy.png": "/my-brand-react-app/static/media/reddy.189d4c95426d9f8fc212.png",
-    "static/media/herobg.png": "/my-brand-react-app/static/media/herobg.801494a21881c2eabcf4.png",
     "static/media/ecommerce.PNG": "/my-brand-react-app/static/media/ecommerce.7bde42f88931737f32f4.PNG",
+    "static/media/herobg.png": "/my-brand-react-app/static/media/herobg.9c4e8b6a8cdcecc17679.png",
     "static/media/GADS Certificate - Ishimwe Kevin.png": "/my-brand-react-app/static/media/GADS Certificate - Ishimwe Kevin.b5acb95a28d1ff8970d9.png",
     "static/media/AIapp.JPG": "/my-brand-react-app/static/media/AIapp.3ae7f9cac8f14b9bdfbc.JPG",
     "static/media/Capture.JPG": "/my-brand-react-app/static/media/Capture.88545ba6a7f1d8ad6039.JPG",
@@ -27,12 +27,12 @@
     "static/media/slick.ttf": "/my-brand-react-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/my-brand-react-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/my-brand-react-app/index.html",
-    "main.9c4bfe84.css.map": "/my-brand-react-app/static/css/main.9c4bfe84.css.map",
-    "main.1f8ba08e.js.map": "/my-brand-react-app/static/js/main.1f8ba08e.js.map",
+    "main.cd0ddddd.css.map": "/my-brand-react-app/static/css/main.cd0ddddd.css.map",
+    "main.65a61e5d.js.map": "/my-brand-react-app/static/js/main.65a61e5d.js.map",
     "787.a91260d6.chunk.js.map": "/my-brand-react-app/static/js/787.a91260d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9c4bfe84.css",
-    "static/js/main.1f8ba08e.js"
+    "static/css/main.cd0ddddd.css",
+    "static/js/main.65a61e5d.js"
   ]
 }
