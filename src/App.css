@@ -6,10 +6,15 @@
 .App {
   text-align: center;
 }
+.widget-btn {
+  background: #facc15;
+}
 
 .clipper {
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 10% 48%);
+  transition: 0.5s all;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
 }
+
 .logo {
   font-family: "Romanesco", sans-serif;
   font-weight: 500;
@@ -57,4 +62,52 @@
   .clipper {
     clip-path: none;
   }
+}
+.bpw-widget-btn {
+  background-color: #e3ad40;
+}
+.bpw-chat-container {
+  background-color: #e1eee73a;
+  color: white;
+  backdrop-filter: blur(30px);
+}
+.bpw-from-user .bpw-chat-bubble .bpw-chat-bubble-content {
+  background-color: #e3ad40;
+  color: white;
+}
+.bpw-from-bot .bpw-chat-bubble .bpw-chat-bubble-content {
+  background-color: #f7f7f7fa;
+}
+.bpw-button,
+.bpw-button-alt {
+  background-color: #e0eee4;
+  font-size: 1rem;
+  min-width: 5rem;
+  padding: 0.4rem 0.8rem;
+  border-color: #e3ad40;
+  color: #e3ad40;
+  border-radius: 20px;
+}
+.bpw-keyboard {
+  background: #94b19d;
+}
+.bpw-keyboard-single-choice {
+  background: #e0eee5;
+}
+.bp-widget-side {
+  bottom: 0;
+  height: 100% !important;
+  left: auto;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+.bp-widget-widget {
+  bottom: 24px;
+  height: 76px !important;
+  left: auto;
+  right: 36px;
+  top: auto;
+  width: 76px !important;
+  outline: none;
 }

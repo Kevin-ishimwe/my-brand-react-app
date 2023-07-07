@@ -5,7 +5,7 @@ import Typical from "react-typical";
 function ABOUT_ME() {
   const [text, settext] = useState("");
   const all =
-    "With over 3 years of experience, I have honed my ability to stay focused and productive, even under heavy amounts of stress. My friends often come to me for help with their coding projects, which is a testimony to my skills and dedication to the craft. One of my greatest strengths as a web developer is my problem-solving skills. I find great satisfaction in breaking down complex issues and building elegant and functional websites. I am always looking fornew ways to expand my knowledge and stay current with the latesttrends and technologies in web development. My long-term goal is tobecome a senior web developer and eventually start my own development firm.";
+    "With over 3 years of experience, I have honed my ability to stay focused and productive, even under heavy amounts of stress.One of my greatest strengths as a web developer is my problem-solving skills. I find great satisfaction in breaking down complex issues and building elegant and functional websites. I am always looking fornew ways to expand my knowledge and stay current with the latesttrends and technologies in web development. My long-term goal is tobecome a senior web developer and eventually start my own development firm.";
 
   useEffect(() => {
     let typingTimer;
@@ -42,7 +42,6 @@ function ABOUT_ME() {
           <span className="flux text-xl font-extrabold">|</span>
         </p>
         <a
-          
           href="https://firebasestorage.googleapis.com/v0/b/my-brand-kevin.appspot.com/o/myResume%2Fresume_kevin_Ishimwe-1.pdf?alt=media&token=3e2642cd-e7e0-4507-addd-8a8b29578e2c"
           data-aos="fade-up"
           className=" flex mx-auto lg:ml-8  mt-10 rounded-full  dark:bg-yellow-400 dark:text-black ease-out font-semibold duration-300 bg-[#00034a] text-1xl mb-5 max-w-fit  p-2 lg:mx-2 text-white sm:mt-5 pr-4 pl-4 hover:bg-[#1a05ae] hover:scale-105"

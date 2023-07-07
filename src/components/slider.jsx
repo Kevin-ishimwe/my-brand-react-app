@@ -7,6 +7,7 @@ import musicapp from "../assets/projects/musicapp.JPG";
 import Capture from "../assets/projects/Capture.JPG";
 import reddy from "../assets/projects/reddy.png";
 import ecommerce from "../assets/projects/ecommerce.PNG";
+import devpulse from "../assets/projects/devpulse.png";
 
 function SliderComponent() {
   const settings = {
@@ -74,6 +75,12 @@ function SliderComponent() {
       name: "portfolio website",
       desc: "Welcome to our front-end development website, where we showcase the latest trends and techniques in building stunning user interfaces and web applications.",
       demo: "https://my-public-portfolio101.netlify.app/",
+    },
+    {
+      img: devpulse,
+      name: "dev pulse",
+      desc: "The number one platform for managing trainees or students in any ed-tech organization ",
+      demo: "https://beta.devpulse.co/",
     },
     {
       img: AIapp,

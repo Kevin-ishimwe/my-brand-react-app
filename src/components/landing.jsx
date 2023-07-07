@@ -20,7 +20,9 @@ function Landing() {
   const allblogs = useContext(BlogsContext);
 
   useEffect(() => {
-    AOS.init();
+   AOS.init({
+     disable: "mobile",
+   });
   }, []);
 
   const hero = useRef();
@@ -123,20 +125,20 @@ function Landing() {
             </p>
             <div
               id="parent"
-              className="flex pt-0 md:pt-5 overflow-x-scroll md:overflow-auto lg:py-10 lg:justify-center "
+              className="flex pt-0 md:pt-5 overflow-x-scroll md:overflow-auto lg:py-10 lg:justify-center  "
             >
               {blogs.map(({ blogTitle, _id, blogDescription, blogImg }) => {
                 return (
                   <div
-                    className="flex justify-center mx-3 scale-[.9] hover:scale-100 transition-all"
+                    className="flex justify-center scale-[.9] hover:scale-100 transition-all"
                     key={_id}
                   >
-                    <div className="rounded-lg shadow-2xl bg-white dark:bg-slate-900  max-w-sm min-w-[25em] ">
+                    <div className="rounded-lg shadow-2xl bg-white dark:bg-slate-900  max-w-[20em] min-w-[18em] ">
                       <Link to={`/singleblog?id=${_id}`}>
                         <img
                           data-aos="flip-right"
                           data-aos-offset="100"
-                          className="rounded-t-lg h-[45vh] w-full object-cover"
+                          className="rounded-t-lg h-[40vh] w-full object-cover"
                           src={blogImg}
                           alt=""
                         />
