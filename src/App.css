@@ -12,8 +12,7 @@
 
 .clipper {
   transition: 0.5s all;
-  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-}
+ clip-path: ellipse(61% 61% at 65% 49%);}
 
 .logo {
   font-family: "Romanesco", sans-serif;

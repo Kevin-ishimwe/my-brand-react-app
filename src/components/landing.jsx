@@ -49,7 +49,7 @@ function Landing() {
                   data-aos-delay="3200"
                   className="dark:text-yellow-400   text-center lg:text-left mt-4 text-4xl sm:ml-4 md:ml-8  md:text-5xl text-[#000223] font-semibold sm:mt-1 mb-2  lg:ml-8"
                 >
-                  ISHIMWE KEVIN
+                  KEVIN ISHIMWE 
                 </p>
 
                 <Typical
