@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/my-brand-react-app/static/css/main.b4294034.css",
-    "main.js": "/my-brand-react-app/static/js/main.c1a293a4.js",
+    "main.css": "/my-brand-react-app/static/css/main.9214cd0d.css",
+    "main.js": "/my-brand-react-app/static/js/main.b28f3e88.js",
     "static/js/787.a91260d6.chunk.js": "/my-brand-react-app/static/js/787.a91260d6.chunk.js",
-    "static/media/devpulse.png": "/my-brand-react-app/static/media/devpulse.dc8f54ea5c20c49d340f.png",
     "static/media/reddy.png": "/my-brand-react-app/static/media/reddy.189d4c95426d9f8fc212.png",
+    "static/media/devpulse.png": "/my-brand-react-app/static/media/devpulse.890a80458501ca501b60.png",
     "static/media/lotus.png": "/my-brand-react-app/static/media/lotus.e06b91dfb6bea163e235.png",
     "static/media/ecommerce.PNG": "/my-brand-react-app/static/media/ecommerce.7bde42f88931737f32f4.PNG",
     "static/media/herobg.png": "/my-brand-react-app/static/media/herobg.9c4e8b6a8cdcecc17679.png",
@@ -29,12 +29,12 @@
     "static/media/slick.ttf": "/my-brand-react-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/my-brand-react-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/my-brand-react-app/index.html",
-    "main.b4294034.css.map": "/my-brand-react-app/static/css/main.b4294034.css.map",
-    "main.c1a293a4.js.map": "/my-brand-react-app/static/js/main.c1a293a4.js.map",
+    "main.9214cd0d.css.map": "/my-brand-react-app/static/css/main.9214cd0d.css.map",
+    "main.b28f3e88.js.map": "/my-brand-react-app/static/js/main.b28f3e88.js.map",
     "787.a91260d6.chunk.js.map": "/my-brand-react-app/static/js/787.a91260d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4294034.css",
-    "static/js/main.c1a293a4.js"
+    "static/css/main.9214cd0d.css",
+    "static/js/main.b28f3e88.js"
   ]
 }
