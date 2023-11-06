@@ -7,7 +7,7 @@ function Contact() {
     document.getElementById("wait").style.display = "grid";
     e.target.lastChild.children[1].textContent = ` LOADING...`;
 
-    await fetch("https://my-backend-portfolio.onrender.com/addmessages", {
+    await fetch("https://portfolio-backend-prod.up.railway.app/addmessages", {
       method: "POST",
       mode: "cors",
       headers: {
@@ -34,13 +34,12 @@ function Contact() {
       });
   };
   return (
-    <div
-      data-aos="flip-up"
-      data-aos-duration="700"
-      id="ContactPage"
-    >
-      <div className="flex w-11/12 pb-4 mx-auto shadow-[2px_3px_30px_#cbcbcb] dark:shadow-lg rounded-2xl dark:bg-slate-900 mt-20 lg:w-5/12 md:mt-0 min-h-[50vh] ">
-        <form className="flex flex-col w-full px-5" onSubmit={handleMessage}>
+    <div className="" id="ContactPage">
+      <div className="flex w-10/12 pb-4 mx-auto shadow-[2px_3px_30px_#cbcbcb] dark:shadow-lg rounded-2xl dark:bg-slate-900 mt-20 lg:w-5/12 md:mt-0 min-h-[50vh] ">
+        <form
+          className="flex flex-col w-full px-5 box-border"
+          onSubmit={handleMessage}
+        >
           <h1 className=" text-center  text-6xl font-semibold font-sans mb-4 text-[#040b1e] dark:text-yellow-100">
             get in touch
           </h1>

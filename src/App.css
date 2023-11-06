@@ -6,6 +6,13 @@
 .App {
   text-align: center;
 }
+.widget-btn {
+  background: #facc15;
+}
+
+.clipper {
+  transition: 0.5s all;
+ clip-path: ellipse(61% 61% at 65% 49%);}
 
 .logo {
   font-family: "Romanesco", sans-serif;
@@ -14,23 +21,17 @@
   margin: 0% 0%;
   padding: 9px 18px;
   border-radius: 50%;
-  border: solid azure;
+  border: solid #000d53;
   max-height: fit-content;
-  animation: binksake 2s infinite;
+  color: #000d53;
+  scale: 0.9;
   transition: 0.3s ease-in-out;
 }
-
-@keyframes binksake {
-  0% {
-    background-color: none;
-  }
-  50% {
-    background-color: #000d53;
-  }
-  100% {
-    background-color: #ecbe3a;
-  }
+.dark .logo {
+  color: #facc15;
+  border-color: #facc15;
 }
+
 .learn {
   border: solid black;
   padding: 0.3em 2%;
@@ -54,4 +55,58 @@
   to {
     opacity: 1;
   }
+}
+
+@media screen and (max-width: 1023px) {
+  .clipper {
+    clip-path: none;
+  }
+}
+.bpw-widget-btn {
+  background-color: #e3ad40;
+}
+.bpw-chat-container {
+  background-color: #e1eee73a;
+  color: white;
+  backdrop-filter: blur(30px);
+}
+.bpw-from-user .bpw-chat-bubble .bpw-chat-bubble-content {
+  background-color: #e3ad40;
+  color: white;
+}
+.bpw-from-bot .bpw-chat-bubble .bpw-chat-bubble-content {
+  background-color: #f7f7f7fa;
+}
+.bpw-button,
+.bpw-button-alt {
+  background-color: #e0eee4;
+  font-size: 1rem;
+  min-width: 5rem;
+  padding: 0.4rem 0.8rem;
+  border-color: #e3ad40;
+  color: #e3ad40;
+  border-radius: 20px;
+}
+.bpw-keyboard {
+  background: #94b19d;
+}
+.bpw-keyboard-single-choice {
+  background: #e0eee5;
+}
+.bp-widget-side {
+  bottom: 0;
+  height: 100% !important;
+  left: auto;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+.bp-widget-widget {
+  bottom: 24px;
+  height: 76px !important;
+  left: auto;
+  right: 36px;
+  top: auto;
+  width: 76px !important;
+  outline: none;
 }

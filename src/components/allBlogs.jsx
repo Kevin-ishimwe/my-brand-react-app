@@ -15,17 +15,17 @@ function AllBlogs({ num }) {
   return (
     <div className="dark:bg-[#040b1e] min-h-[100vh] w-full">
       <Navbar />
-      <div className="flex pt-32 flex-wrap ">
+      <div className="flex pt-32 flex-wrap justify-center">
         {blogs.map(({ blogTitle, _id, blogDescription, blogImg }) => {
           return (
             <div
-              className="flex justify-center mx-3 scale-95 min-w-[10em]"
+              className="flex justify-center  scale-95 min-w-[10em]"
               key={_id}
             >
               <div className="rounded-lg shadow-2xl bg-white dark:bg-slate-900  max-w-sm">
                 <Link to={`/singleblog?id=${_id}`} spy="true" smooth="true">
                   <img
-                    className="rounded-t-lg w-full h-[50vh] p-1"
+                    className="rounded-t-lg w-full h-[50vh] p-1 object-cover"
                     src={blogImg}
                     alt=""
                   />

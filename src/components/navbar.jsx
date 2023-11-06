@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { HiMenu } from "react-icons/hi";
+import { HiLightBulb } from "react-icons/hi";
 import { MdDarkMode } from "react-icons/md";
-import { RxSun } from "react-icons/rx";
 import { FaRegTimesCircle } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
+  const [navStyle, setnavStyle] = useState({
+    nav: "",
+    li: "",
+  });
   const [theme, settheme] = useState("dark");
   useEffect(() => {
     if (localStorage.getItem("theme") === "light") {
@@ -17,12 +21,11 @@ function Navbar() {
     }
   }, []);
   const handleTheme = () => {
+    setnavStyle("bg-[#0000]");
     if (theme === "light") {
       settheme("dark");
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
-
-      AOS.refreshHard("my-element");
       AOS.init();
     } else {
       settheme("light");
@@ -30,30 +33,46 @@ function Navbar() {
       localStorage.setItem("theme", "light");
     }
   };
-  const linkStyle =
-    "z-10  text-2xl font-medium md:dark:text-white [text-transform:lowercase] ";
+  useEffect(() => {
+    window.onscroll = () => {
+      if (window.scrollY > 1500) {
+        theme === "light"
+          ? setnavStyle({
+              nav: "shadow-md bg-white ",
+              li: "text-[#000223]",
+            })
+          : setnavStyle({
+              nav: "shadow-md bg-[#040b1e]",
+              li: "dark:md:text-yellow-300 dark:text-black",
+            });
+      } else {
+        setnavStyle("");
+      }
+    };
+  }, [theme]);
+  const linkStyle = `z-10 ${navStyle.li}  text-2xl font-medium [text-transform:lowercase] `;
 
   return (
     <nav
       id="navbar"
-      className="pr-3  md:pr-0 ease-in duration-500 fixed  top-0  dark:ml-0  w-full justify-between  flex z-20  lg:pl-8 items-center "
+      className={`${navStyle.nav} md:text-white  pr-3 h-[5em]  duration-500 fixed  top-0  dark:ml-0  w-[100vw] justify-between  flex z-20  lg:pl-8 items-center `}
     >
       <h1 className="logo text-5xl scale-75 sm:scale-85 md:scale-95 ">IK</h1>
       {theme === "light" ? (
         <MdDarkMode
-          className="text-gray-100 lg:ml-60 text-3xl cursor-pointer rounded-full border-solid border-gray-400 bg-yellow-500 border-2"
+          className="text-white lg:ml-60 text-3xl cursor-pointer rounded-full border-none  bg-yellow-500 border-2"
           onClick={handleTheme}
         />
       ) : (
-        <RxSun
-          className="text-3xl cursor-pointer lg:ml-64  dark:text-yellow-300"
+        <HiLightBulb
+          className="text-gray-100 lg:ml-60 text-3xl cursor-pointer rounded-full  border-none  bg-yellow-500 border-2"
           onClick={handleTheme}
         />
       )}
 
       <ul
         id="hamburger"
-        className="dark:bg-yellow-400 md:dark:bg-inherit bg-[#f2f2f2] md:bg-inherit sm:w-5/12 w-7/12 md:w-fit top-0 right-0 h-full  md:flex md:mr-10 "
+        className="dark:bg-yellow-400 md:dark:bg-inherit bg-[#f2f2f2] md:bg-inherit sm:w-5/12 w-7/12 md:w-fit top-0 right-0 h-full items-center  md:flex md:mr-10 "
       >
         <li id="menu_item" className=" mx-2">
           <FaRegTimesCircle
@@ -92,7 +111,7 @@ function Navbar() {
       </ul>
 
       <HiMenu
-        className=" text-4xl mt-3 mr-0 text-[#040b1e] dark:text-white md:hidden"
+        className=" text-4xl text-[#040b1e] dark:text-[#facc15] md:hidden"
         onClick={() => {
           document.getElementById("hamburger").style =
             "clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);";

@@ -52,6 +52,7 @@ function Skillz() {
         SKILLS
       </p>
       <p
+        id="skillz"
         data-aos="fade-up"
         data-aos-anchor="#skill1"
         data-aos-duration="500"

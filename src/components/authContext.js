@@ -5,7 +5,7 @@ export const AuthProvider = ({ children }) => {
   const [isauth, setisauth] = useState(false);
   const checkToken = async () => {
     const token = localStorage.getItem("token");
-    await fetch("https://my-backend-portfolio.onrender.com/getmessages", {
+    await fetch("https://portfolio-backend-prod.up.railway.app/getmessages", {
       method: "GET",
       headers: {
         "Access-Control-Allow-Credentials": true,
