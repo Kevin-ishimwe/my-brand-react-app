@@ -19,15 +19,18 @@ function AddBlog() {
     body.append("blogTitle", form[0].value);
     body.append("blogDescription", form[2].value);
     body.append("blogContent", value);
-    await fetch("https://portfolio-backend-prod.up.railway.app/addblog", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        token: `Bearer ${localStorage.token}`,
-      },
-      mode: "cors",
-      body: body,
-    })
+    await fetch(
+      "http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:3000/addblog",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          token: `Bearer ${localStorage.token}`,
+        },
+        mode: "cors",
+        body: body,
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

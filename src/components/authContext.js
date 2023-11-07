@@ -5,16 +5,19 @@ export const AuthProvider = ({ children }) => {
   const [isauth, setisauth] = useState(false);
   const checkToken = async () => {
     const token = localStorage.getItem("token");
-    await fetch("https://portfolio-backend-prod.up.railway.app/getmessages", {
-      method: "GET",
-      headers: {
-        "Access-Control-Allow-Credentials": true,
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        token: `Bearer ${token}`,
-      },
-      mode: "cors",
-    })
+    await fetch(
+      "http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:3000/getmessages",
+      {
+        method: "GET",
+        headers: {
+          "Access-Control-Allow-Credentials": true,
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          token: `Bearer ${token}`,
+        },
+        mode: "cors",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "success") {

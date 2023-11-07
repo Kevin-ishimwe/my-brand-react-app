@@ -16,19 +16,22 @@ function Login() {
     e.target.lastElementChild.lastChild.textContent = "LOADING...";
     e.target.lastElementChild.firstChild.style.display = "grid";
     console.log(e.target.lastElementChild.firstChild);
-    await fetch("https://portfolio-backend-prod.up.railway.app/login", {
-      method: "POST",
-      headers: {
-        Accept: "application/json,text/plain,*/*",
-        "Content-type": "application/json",
-      },
+    await fetch(
+      "http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:3000/login",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json,text/plain,*/*",
+          "Content-type": "application/json",
+        },
 
-      withCredentials: true,
-      body: JSON.stringify({
-        email: e.target[0].value,
-        password: e.target[1].value,
-      }),
-    })
+        withCredentials: true,
+        body: JSON.stringify({
+          email: e.target[0].value,
+          password: e.target[1].value,
+        }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         e.target.lastElementChild.lastChild.textContent = "LOGIN";

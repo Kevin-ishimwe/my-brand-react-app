@@ -7,19 +7,22 @@ function Contact() {
     document.getElementById("wait").style.display = "grid";
     e.target.lastChild.children[1].textContent = ` LOADING...`;
 
-    await fetch("https://portfolio-backend-prod.up.railway.app/addmessages", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: e.target.name.value,
-        email: e.target.email.value,
-        content: e.target.content.value,
-      }),
-    })
+    await fetch(
+      "http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:3000/addmessages",
+      {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: e.target.name.value,
+          email: e.target.email.value,
+          content: e.target.content.value,
+        }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

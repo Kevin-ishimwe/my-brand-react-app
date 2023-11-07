@@ -66,7 +66,7 @@ function ManageBlogs() {
                     setpopup("");
                     console.log(id);
                     await fetch(
-                      `https://portfolio-backend-prod.up.railway.app/deleteblog/${id}`,
+                      `http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:3000/deleteblog/${id}`,
                       {
                         method: "DELETE",
                         headers: {
