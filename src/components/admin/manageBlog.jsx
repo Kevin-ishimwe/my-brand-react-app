@@ -66,7 +66,7 @@ function ManageBlogs() {
                     setpopup("");
                     console.log(id);
                     await fetch(
-                      `http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:3000/deleteblog/${id}`,
+                      `http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:8080/deleteblog/${id}`,
                       {
                         method: "DELETE",
                         headers: {

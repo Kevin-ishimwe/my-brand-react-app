@@ -17,7 +17,7 @@ function Login() {
     e.target.lastElementChild.firstChild.style.display = "grid";
     console.log(e.target.lastElementChild.firstChild);
     await fetch(
-      "http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:3000/login",
+      "http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:8080/login",
       {
         method: "POST",
         headers: {

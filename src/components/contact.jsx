@@ -8,7 +8,7 @@ function Contact() {
     e.target.lastChild.children[1].textContent = ` LOADING...`;
 
     await fetch(
-      "http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:3000/addmessages",
+      "http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:8080/addmessages",
       {
         method: "POST",
         mode: "cors",

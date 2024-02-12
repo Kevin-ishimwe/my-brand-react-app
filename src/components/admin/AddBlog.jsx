@@ -20,7 +20,7 @@ function AddBlog() {
     body.append("blogDescription", form[2].value);
     body.append("blogContent", value);
     await fetch(
-      "http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:3000/addblog",
+      "http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:8080/addblog",
       {
         method: "POST",
         headers: {

@@ -6,7 +6,7 @@ export const AuthProvider = ({ children }) => {
   const checkToken = async () => {
     const token = localStorage.getItem("token");
     await fetch(
-      "http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:3000/getmessages",
+      "http://ec2-3-14-143-191.us-east-2.compute.amazonaws.com:8080/getmessages",
       {
         method: "GET",
         headers: {
