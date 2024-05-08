@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/my-brand-react-app/static/css/main.9214cd0d.css",
-    "main.js": "/my-brand-react-app/static/js/main.636a6bae.js",
-    "static/js/787.a91260d6.chunk.js": "/my-brand-react-app/static/js/787.a91260d6.chunk.js",
+    "main.css": "/my-brand-react-app/static/css/main.f3ec010a.css",
+    "main.js": "/my-brand-react-app/static/js/main.27022d3d.js",
+    "static/js/787.58aae349.chunk.js": "/my-brand-react-app/static/js/787.58aae349.chunk.js",
     "static/media/reddy.png": "/my-brand-react-app/static/media/reddy.189d4c95426d9f8fc212.png",
     "static/media/devpulse.png": "/my-brand-react-app/static/media/devpulse.890a80458501ca501b60.png",
     "static/media/lotus.png": "/my-brand-react-app/static/media/lotus.e06b91dfb6bea163e235.png",
@@ -29,12 +29,12 @@
     "static/media/slick.ttf": "/my-brand-react-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/my-brand-react-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/my-brand-react-app/index.html",
-    "main.9214cd0d.css.map": "/my-brand-react-app/static/css/main.9214cd0d.css.map",
-    "main.636a6bae.js.map": "/my-brand-react-app/static/js/main.636a6bae.js.map",
-    "787.a91260d6.chunk.js.map": "/my-brand-react-app/static/js/787.a91260d6.chunk.js.map"
+    "main.f3ec010a.css.map": "/my-brand-react-app/static/css/main.f3ec010a.css.map",
+    "main.27022d3d.js.map": "/my-brand-react-app/static/js/main.27022d3d.js.map",
+    "787.58aae349.chunk.js.map": "/my-brand-react-app/static/js/787.58aae349.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9214cd0d.css",
-    "static/js/main.636a6bae.js"
+    "static/css/main.f3ec010a.css",
+    "static/js/main.27022d3d.js"
   ]
 }
